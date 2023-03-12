@@ -65,23 +65,23 @@
                 <i class="fa-brands fa-twitter"></i>
                 <span>Twitter</span></a>
             </div>
-            <div class="openmedia" id="openmedia">
+            <!-- <div class="openmedia" id="openmedia">
                 <i class="fa-solid fa-hashtag"  onclick="openmed()"></i>
             </div>
             <div class="closemedia" id="closemedia">
                 <i class="fa-solid fa-xmark" onclick="closemed()"></i>
-            </div>       
+            </div>        -->
         </div>
 
         <!-- ---------------- Navigation ---------------- -->
 
         <div class="navigation fixed">
-            <div class="close" id="closeicon">
+            <!-- <div class="close" id="closeicon">
                 <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
             </div>
             <div class="open" id="openicon">
                 <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-            </div>
+            </div> -->
             <div class="nicon home">
                 <a href="#home">
                     <i class="fa-solid fa-house"></i>
@@ -124,181 +124,163 @@
 
         <!-- ---------- Home Section ---------- -->
         <section id="home" class="one">
-            <!-- <div class="contain"> -->
-            <div class="image move-left">
-                <img src="images/Man-code.svg" alt="">
+            <div class="home-container center">
+                <div class="header-info">
+                    <div class="greeting">
+                        <h1>Hello, This is Unknown Developer</h1>
+                    </div>
+                    <div class="full-name move-right">
+                        <h2>Srikanth Pamulapati</h2>
+                    </div>
+                    <div class="tag-line">
+                        <h3>Think. Design. Create. Repeat.</h3>
+                    </div>
+                    <div class="description">
+                        <p>
+                            I work on creating <span>internet-based websites</span> and <span>digital applications</span>.
+                            My primary goal as a software engineer (web developer) is to design, construct, present, operate,
+                            and upgrade to guarantee amazing digital experiences.
+                        </p>
+                        <!-- As a software engineer (web developer), my focus is to create, operate, Present, maintain, and update to ensure amazing digital experiences.
+                        My concentration as a software engineer (web developer) is on creating, running, presenting, maintaining, and updating to guarantee exceptional digital experiences. -->
+                    </div>
+                </div>
+                <div class="image move-left center">
+                    <img src="images/Man-code.svg" alt="">
+                </div>
             </div>
-            <div class="header-info">
-                <div class="greeting">
-                    <h1>Hello, This is Unknown Developer</h1>
-                </div>
-                <div class="full-name move-right">
-                    <h2>Srikanth Pamulapati</h2>
-                </div>
-                <div class="tag-line">
-                    <h3>Think. Design. Create. Repeat.</h3>
-                </div>
-                <div class="description">
-                    <p>
-                        I work on creating <span>internet-based websites</span> and <span>digital applications</span>.
-                        My primary goal as a software engineer (web developer) is to design, construct, present, operate,
-                        and upgrade to guarantee amazing digital experiences.
-                    </p>
-                    <!-- As a software engineer (web developer), my focus is to create, operate, Present, maintain, and update to ensure amazing digital experiences.
-                    My concentration as a software engineer (web developer) is on creating, running, presenting, maintaining, and updating to guarantee exceptional digital experiences. -->
-                </div>
-            </div>
-            <!-- </div> -->       
         </section>
 
         <!-- ---------- About Section ---------- -->
 
         <section id="about" class="two">
-            <div class="image move-right">
-                <img src="images/Web Developer_Outline.svg" alt="">
-            </div>
-            <div class="about-text move-left">
-                <div class="only-text">
-                    <p>
-                        <a class="N">N</a><my-span>amaste!</my-span> My name is <my-span>Srikanth Pamulapati</my-span> and i have started my career back in <my-span>2018</my-span> as a QA Tester. Over the course of my life and career, I have worked with a variety of technologies, both <my-span>backend</my-span> and <my-span>frontend</my-span>.
-                        I'm currently working using Spring Boot. My job includes developing web apps and setting up backend servers.<br><br>
-                        My goal is to create high-performance applications that solve real-world problems while also providing an enjoyable user experience.
-                        Having the knowledge and skills to build websites and applications from the ground up fulfils a part of me that enjoys problem solving and the production process.<br><br>
-                        I hope that these skills, combined with my ongoing education in the field, will strengthen my ability as a web developer and enable me to assist others in bringing their ideas to life on the web in an efficient and creative manner.
-                    </p>
+            <div class="about-container center">
+                <div class="image move-right center">
+                    <img src="images/Web Developer_Outline.svg" alt="">
                 </div>
-                <div class="about-details move-right" id="about-details">
-                    <span class="skill" onclick="expand('1')">
-                        <h4>Skills</h4>
-                        <div class="hidden-details skill-details">
-                            <!-- <div class="box UIUX">
-                                <h1><my-span>UI/UX</my-span></h1>
-                                <h1><my-span>Web Development</my-span></h1>
-                                <h1><my-span>QA/QC</my-span></h1>
+                <div class="about-text move-left">
+                    <div class="only-text">
+                        <p>
+                            <a class="N">N</a><my-span>amaste !</my-span> My name is <my-span>Srikanth Pamulapati</my-span> and i have started my career back in <my-span>2018</my-span> as a QA Tester. Over the course of my life and career, I have worked with a variety of technologies, both <my-span>backend</my-span> and <my-span>frontend</my-span>.
+                            I'm currently working using Spring Boot. My job includes developing web apps and setting up backend servers.<br><br>
+                            My goal is to create high-performance applications that solve real-world problems while also providing an enjoyable user experience.
+                            Having the knowledge and skills to build websites and applications from the ground up fulfils a part of me that enjoys problem solving and the production process.<br><br>
+                            I hope that these skills, combined with my ongoing education in the field, will strengthen my ability as a web developer and enable me to assist others in bringing their ideas to life on the web in an efficient and creative manner.
+                        </p>
+                    </div>
+                    <div class="about-details move-right" id="about-details">
+                        <span class="skill" onclick="expand('1')">
+                            <h4>Skills</h4>
+                            <div class="hidden-details skill-details">
+                                <div class="box UIUX">
+                                    <h1><my-span>UI/UX</my-span></h1>
+                                    <h2>Developing Web Interfaces</h2>
+                                    <h3>HTML, CSS, JavaScript</h3>
+                                </div>
+                                <div class="box web-dev">
+                                    <h1><my-span>Web Development</my-span></h1>
+                                    <h2>Web App Development</h2>
+                                    <h3>Spring Boot, Java</h3>
+                                </div>
+                                <div class="box QAQC">
+                                    <h1><my-span>QA/QC</my-span></h1>
+                                    <h2>Manual and Automation Testing</h2>
+                                    <h3><my-span>OATS</my-span> (Oracle Application Testing Suite)</h3>
+                                </div>
                             </div>
-                            <div class="box web-dev">
-                                <h2>Developing Web Interfaces</h2>
-                                <h2>Web App Development</h2>
-                                <h2>Manual and Automation Testing</h2>
+                        </span>
+                        <span class="experience" onclick="expand('2')">
+                            <h4>Experience</h4>
+                            <div class="hidden-details exp-details">
+                                <div class="box">
+                                    <h1><my-span>2022 - Current</my-span></h1>
+                                    <h2>Senior Project Engineer</h2>
+                                    <h2><my-span>Wipro Technologies</my-span> </h2>
+                                    <h3>HTML, CSS, JavaScript</h3>
+                                </div>
+                                <div class="box">
+                                    <h1><my-span>2020 - 2022</my-span></h1>
+                                    <h2>Project Engineer</h2>
+                                    <h2><my-span>Wipro Technologies</my-span> </h2>
+                                    <h3>Spring Boot, Java</h3>
+                                </div>
+                                <div class="box">
+                                    <h1><my-span>2018 - 2020</my-span></h1>
+                                    <h2>Test Engineer</h2>
+                                    <h2><my-span>Wipro Technologies</my-span> </h2>
+                                    <h3>OATS with Java</h3>
+                                </div>
                             </div>
-                            <div class="box QAQC">
-                                <h3>HTML, CSS, JavaScript</h3>
-                                <h3>Spring Boot, Java</h3>
-                                <h3><my-span>OATS</my-span> (Oracle Application Testing Suite)</h3>
-                            </div> -->
-                            <div class="box UIUX">
-                                <h1><my-span>UI/UX</my-span></h1>
-                                <h2>Developing Web Interfaces</h2>
-                                <h3>HTML, CSS, JavaScript</h3>
+                        </span>
+                        <span class="education" onclick="expand('3')">
+                            <h4>Education</h4>
+                            <div class="hidden-details edu-details">
+                                <div class="box ssc">
+                                    <h1>March <my-span>2012</my-span></h1>
+                                    <h2>SSC</h2>
+                                    <h3>GSR Model High School</h3>
+                                </div>
+                                <div class="box inter">
+                                    <h1>May <my-span>2012</my-span> - April <my-span>2014</my-span></h1>
+                                    <h2>Intermediate</h2>
+                                    <h3>Sri Chaitanya</h3>
+                                </div>
+                                <div class="box btech">
+                                    <h1>September <my-span>2014</my-span> - July <my-span>2018</my-span></h1>
+                                    <h2>Bachelors in Computer Science</h2>
+                                    <h3>RVR & JC College of Engineering</h3>
+                                </div>
                             </div>
-                            <div class="box web-dev">
-                                <h1><my-span>Web Development</my-span></h1>
-                                <h2>Web App Development</h2>
-                                <h3>Spring Boot, Java</h3>
-                            </div>
-                            <div class="box QAQC">
-                                <h1><my-span>QA/QC</my-span></h1>
-                                <h2>Manual and Automation Testing</h2>
-                                <h3><my-span>OATS</my-span> (Oracle Application Testing Suite)</h3>
-                            </div>
-                        </div>
-                    </span>
-                    <span class="experience" onclick="expand('2')">
-                        <h4>Experience</h4>
-                        <div class="hidden-details exp-details">
-                            <div class="box">
-                                <h1><my-span>2022 - Current</my-span></h1>
-                                <h2>Senior Project Engineer -<my-span>Wipro Technologies</my-span> </h2>
-                                <h3>HTML, CSS, JavaScript</h3>
-                            </div>
-                            <div class="box">
-                                <h1><my-span>2020 - 2022</my-span></h1>
-                                <h2>Project Engineer -<my-span>Wipro Technologies</my-span></h2>
-                                <h3>Spring Boot, Java</h3>
-                            </div>
-                            <div class="box">
-                                <h1><my-span>2018 - 2020</my-span></h1>
-                                <h2>Testing Engineer -<my-span>Wipro Technologies</my-span></h2>
-                                <h3>OATS with Java</h3>
-                            </div>
-                        </div>
-                    </span>
-                    <span class="education" onclick="expand('3')">
-                        <h4>Education</h4>
-                        <div class="hidden-details edu-details">
-                            <div class="box ssc">
-                                <h1>March <my-span>2012</my-span></h1>
-                                <h2>SSC</h2>
-                                <h3>GSR Model High School</h3>
-                            </div>
-                            <div class="box inter">
-                                <h1>May <my-span>2012</my-span> - April <my-span>2014</my-span></h1>
-                                <h2>Intermediate</h2>
-                                <h3>Sri Chaitanya</h3>
-                            </div>
-                            <div class="box btech">
-                                <h1>September <my-span>2014</my-span> - July <my-span>2018</my-span></h1>
-                                <h2>Bachelors in Computer Science</h2>
-                                <h3>RVR & JC College of Engineering</h3>
-                            </div>
-                        </div>
-                    </span>
+                        </span>
+                    </div>
                 </div>
             </div>
-            
         </section>
 
         <!-- ---------- Projects Section ---------- -->
 
         <section id="projects" class="three">
-            <!-- <h2>Projects</h2> -->
-            <div class="grid-container">
-                <div class="grid-item active-project">
-                    <div class="project-details">
-                        <div class="project-title">
-                            <h1>Integrating Algolia Search with WordPress Multisite</h1>
-                        </div>
-                        <div class="project-desc">
-                            <p>Building websites for higher-ed is not for the faint of heart. Unless executed properly, these websites can quickly spin into deep labyrinths of information.</p>
-                        </div>
-                        <div class="project-tech-list">
-                            <ul>
-                                <li>Algolia</li>
-                                <li>WordPress</li>
-                                <li>PHP</li>
-                            </ul>
+            <div class="project-container center">
+                <div class="grid-container center">
+                    <div class="grid-item active-project">
+                        <div class="project-details">
+                            <div class="project-title">
+                                <h1>Test Project Title with Long Name</h1>
+                            </div>
+                            <div class="project-desc">
+                                <p>This is description of the test project created, and only be displayed till original projects were created.</p>
+                            </div>
+                            <div class="project-tech-list">
+                                <ul class="center">
+                                    <li>Tech 1</li>
+                                    <li>Tech 2</li>
+                                    <li>Tech 3</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+                    <div class="grid-item center"><span>Building...!!!</span></div>
+                    <div class="grid-item center"><span>Building...!!!</span></div>  
+                    <div class="grid-item center"><span>Building...!!!</span></div>
+                    <div class="grid-item center"><span>Building...!!!</span></div>
+                    <div class="grid-item center"><span>Building...!!!</span></div>  
                 </div>
-                <div class="grid-item center"><span>Building...!!!</span></div>
-                <div class="grid-item center"><span>Building...!!!</span></div>  
-                <div class="grid-item center"><span>Building...!!!</span></div>
-                <div class="grid-item center"><span>Building...!!!</span></div>
-                <div class="grid-item center"><span>Building...!!!</span></div>  
             </div>
         </section>
 
         <!-- ---------- Skills Section ---------- -->
 
-        <!-- <section id="skills" class="three">
-            <div class="skills-container">
-                <div class="skill-box"><h1>Testing11111111</h1></div>
-                <div class="skill-box"><h1>Testing22222222</h1></div>
-                <div class="skill-box"><h1>Testing33333333</h1></div>
-            </div>
-        </section> -->
+        <!-- <section id="skills" class="three"></section> -->
 
         <!-- ---------- Hobbies Section ---------- -->
 
-        <!-- <section id="hobbies" class="four">
-            <h2>Hobbies</h2>
-        </section> -->
+        <!-- <section id="hobbies" class="four"></section> -->
 
         <!-- ---------- Contact Section ---------- -->
 
         <section id="contact" class="five">
-            <div class="contact-container">
-                <div class="primary-contacts">
+            <div class="contact-container center">
+                <div class="primary-contacts center">
                     <h1>Make Connection</h1>
                     <p>Whether you want to ask a question, exchange ideas, discuss professional or personal matters, or simply say hello. You can contact me and I'll do my best to respond as soon as possible.</p>
                     <p><i class="fa-solid fa-envelope"></i><span>srikanth.pamulapati96@gmail.com</span></p>
@@ -310,7 +292,7 @@
                 <div class="write-me-form center">
                     <h2>Suggestions</h2>
                     <p>I would appreciate your input.</p>
-                    <form name="submit-to-google-sheet">
+                    <form class="center" name="submit-to-google-sheet">
                         <input class="input-test" type="text" name="Name" placeholder="Name" required>
                         <input class="input-test" type="text" name="Email" placeholder="Email" required>
                         <textarea class="input-test" name="Message" rows="6" placeholder="Message to Me..."></textarea>
@@ -320,8 +302,11 @@
                 </div>
             </div>
         </section>
+
+        <!-- ---------- Copyright Section ---------- -->
+
         <section id="footer">
-            <div class="copyright">
+            <div class="copyright center">
                  <hr/><p>Designed & Built by Srikanth Pamulapati</p> <hr/>
             </div>
         </section>
@@ -343,7 +328,7 @@
             message.innerHTML = "Message Sent Successfully"
             setTimeout(function(){
                 message.innerHTML = ""
-            },5000)
+            },2000)
             form.reset()
         })
         .catch(error => console.error('Error!', error.message))
