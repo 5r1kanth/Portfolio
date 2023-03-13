@@ -671,7 +671,7 @@ span h4{
     height: 45vh;
     background: var(--Eerie-Black);
 
-    background: url("/images/two.svg");
+    background: url("images/two.svg");
     background-size: 0rem;
     background-repeat: no-repeat;
     background-position: center;
