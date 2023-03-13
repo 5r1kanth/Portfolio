@@ -132,6 +132,12 @@ textarea::-webkit-scrollbar-thumb{
     align-items: center;
     justify-content: center;
 }
+.tcenter{
+    text-align: center;
+}
+.column{
+    flex-direction: column;
+}
 /* ---------------- Logo ---------------- */
 #logo{
     z-index: 200;
@@ -256,7 +262,7 @@ textarea::-webkit-scrollbar-thumb{
     align-items: flex-end;
     flex-direction: column;
 }
-.home:hover,.about:hover,.hobbies:hover,.projects:hover,.contact:hover{
+.home:hover,.about:hover,.experience:hover,.projects:hover,.contact:hover{
     background: var(--nicontemp);
 }
 .active i{
@@ -382,7 +388,7 @@ section{
     -webkit-text-fill-color: transparent;
 }
 .tag-line{
-    width: 90%;
+    /* width: 90%; */
 }
 .tag-line h3{
     letter-spacing: 0.1rem;
@@ -392,7 +398,7 @@ section{
     font-weight: 400;
 }
 .description{
-    width: 90%;
+    width: 92%;
     font-family: var(--ff-quattrocento);
 }
 .description p,.about-text p{
@@ -522,16 +528,112 @@ span h4{
     margin-right: 1rem;
 }
 .edu-details h1,.skill-details h1,.exp-details h1{
+    /* font-weight: 400; */
     font-size: 0.5rem;
 }
 .edu-details h2,.skill-details h2,.exp-details h2{
+    font-weight: 400;
     font-size: 0.5rem;
 }
 .edu-details h3,.skill-details h3,.exp-details h3{
     font-size: 0.5rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
 }
 .edu-details my-span,.skill-details my-span,.exp-details my-span{
     font-size: 0.45rem;
+}
+
+/* ---------- Experience Section ---------- */
+
+.experience-container{
+    justify-content: flex-start;
+    width: 80%;
+    height: 80%;
+    gap: 2rem;
+}
+.experience-container h1{
+    font-family: var(--ff-eczar);
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+    color: var(--lightest-slate);
+    /* border: var(--border-blue); */
+}
+.experience-details{
+    width: 70%;
+    /* height: 100%; */
+    /* padding: 0rem 2rem 2rem 2rem; */
+}
+.company-names{
+    width: 20%;
+    height: 100%;
+}
+.company-details{
+    width: 80%;
+    height: 100%;
+}
+.company{
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+    font-weight: 200;
+    font-family: var(--ff-nunito);
+    color: var(--lightest-slate);
+    border-left: 0.1rem solid var(--Eerie-Black);
+    transition: 0.5s all ease-out;
+}
+.company:hover,.active-company{
+    background-color: var(--Eerie-Black);
+    color: var(--green);
+}
+.active-company{
+    border-left: 0.1rem solid var(--green);
+}
+.work-details{
+    padding-left: 1rem;
+    display: none;
+}
+.work-details h2,.work-details h2 span{
+    color: var(--lightest-slate);
+    font-family: var(--ff-merriweather);
+    font-size: 0.8rem;
+    font-weight: 400;
+    /* line-height: 1.5rem; */
+    letter-spacing: 1px;
+}
+.work-details h2 span{
+    color: var(--green);
+}
+.work-details h4{
+    margin: 0.5rem 0rem;
+    color: var(--light-slate);
+    font-family: var(--ff-merriweather);
+    font-size: 0.55rem;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+}
+.work-details ul{
+    position: relative;
+}
+.work-details ul li{
+    list-style: none;
+    padding-left: 1rem;
+    margin: 0.5rem 0rem;
+    font-size: 0.65rem;
+    font-family: var(--ff-nunito);
+    color: var(--slate);
+    line-height: 1rem;
+    text-align: justify;
+}
+
+.work-details ul li::before {
+    content: "▹";
+    position: absolute;
+    left: 0px;
+    color: var(--green);
+}
+
+.work-details.active-company-details{
+    display: block;
 }
 
 /* ---------- Projects Section ---------- */

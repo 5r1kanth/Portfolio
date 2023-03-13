@@ -68,6 +68,22 @@ move_right_Elements.forEach(move_right_Element => {
   move_right_observer.observe(move_right_Element)
 })
 
+/* Active Work Experience */
+
+var tablinks = document.getElementsByClassName("company");
+var tabcontents = document.getElementsByClassName("work-details");
+
+function opentab(tabname){
+    for(tablink of tablinks){
+        tablink.classList.remove("active-company");
+    }
+    for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active-company-details");
+    }
+    event.currentTarget.classList.add("active-company");
+    document.getElementById(tabname).classList.add("active-company-details");
+}
+
 /* Expand on click */
 
 /* function expand(spanname){
