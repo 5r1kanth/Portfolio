@@ -557,12 +557,18 @@ span h4{
     font-size: 2rem;
     letter-spacing: 0.2rem;
     color: var(--lightest-slate);
-    /* border: var(--border-blue); */
+    position: relative;
+}
+.experience-container h1::before{
+    content: '';
+    width: 100%;
+    height: 0.1rem;
+    background: var(--lightest-navy);
+    position: absolute;
+    bottom: 0.5rem;
 }
 .experience-details{
     width: 70%;
-    /* height: 100%; */
-    /* padding: 0rem 2rem 2rem 2rem; */
 }
 .company-names{
     width: 20%;
@@ -577,9 +583,14 @@ span h4{
     font-size: 0.7rem;
     font-weight: 200;
     font-family: var(--ff-nunito);
-    color: var(--lightest-slate);
-    border-left: 0.1rem solid var(--Eerie-Black);
+    color: var(--light-slate);
+    border-left: 0.1rem solid var(--lightest-navy);
+    border-radius: 0rem 2rem 2rem 0rem;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
     transition: 0.5s all ease-out;
+}
+.company span{
+    font-size: 0.5rem;
 }
 .company:hover,.active-company{
     background-color: var(--Eerie-Black);
@@ -587,27 +598,36 @@ span h4{
 }
 .active-company{
     border-left: 0.1rem solid var(--green);
+    border-right: 1rem solid var(--green);
 }
 .work-details{
     padding-left: 1rem;
     display: none;
 }
-.work-details h2,.work-details h2 span{
-    color: var(--lightest-slate);
+.work-details h2,.work-details h2 span,.work-details h3{
+    color: var(--white);
     font-family: var(--ff-merriweather);
     font-size: 0.8rem;
     font-weight: 400;
-    /* line-height: 1.5rem; */
     letter-spacing: 1px;
 }
-.work-details h2 span{
+.work-details h3{
+    color: var(--lightest-slate);
+}
+.work-details h2 span,.work-details h3 span{
     color: var(--green);
 }
+
+.work-details h3,.work-details h3 span{
+    font-size: 0.6rem;
+    margin: 0.5rem 0rem;
+}
+
 .work-details h4{
     margin: 0.5rem 0rem;
     color: var(--light-slate);
     font-family: var(--ff-merriweather);
-    font-size: 0.55rem;
+    font-size: 0.5rem;
     font-weight: 400;
     letter-spacing: 0.05rem;
 }
@@ -631,6 +651,10 @@ span h4{
     left: 0px;
     color: var(--green);
 }
+
+/* .work-details:nth-child(1){
+    display: block;
+} */
 
 .work-details.active-company-details{
     display: block;
