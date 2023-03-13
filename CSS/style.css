@@ -363,7 +363,6 @@ section{
       left: 4rem;
     }
   }
-
 .header-info{
     width: 60%;
     padding: 1rem;
@@ -571,21 +570,21 @@ span h4{
     width: 70%;
 }
 .company-names{
-    width: 20%;
+    width: auto;
     height: 100%;
 }
 .company-details{
-    width: 80%;
+    width: 70%;
     height: 100%;
 }
 .company{
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.5rem 0.5rem 0.5rem;
     font-size: 0.7rem;
     font-weight: 200;
     font-family: var(--ff-nunito);
     color: var(--light-slate);
     border-left: 0.1rem solid var(--lightest-navy);
-    border-radius: 0rem 2rem 2rem 0rem;
+    /* border-radius: 0rem 2rem 2rem 0rem; */
     clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
     transition: 0.5s all ease-out;
 }
@@ -598,7 +597,7 @@ span h4{
 }
 .active-company{
     border-left: 0.1rem solid var(--green);
-    border-right: 1rem solid var(--green);
+    /* border-right: 1rem solid var(--green); */
 }
 .work-details{
     padding-left: 1rem;
@@ -671,10 +670,17 @@ span h4{
     width: 25vw;
     height: 45vh;
     background: var(--Eerie-Black);
+
+    background: url("/images/two.svg");
+    background-size: 0rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    
     border-radius: 0.5rem;
     padding: 1rem;
     border: 4px solid var(--Eerie-Black);
-    transition: all 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+    transition: background-size 0.5s ease-out;
 }
 .grid-item span{
     font-family: var(--ff-eczar);
@@ -685,14 +691,20 @@ span h4{
 .grid-item:hover span{
     color: var(--green);
     font-size: 1.5rem;
+
+    transform: translateY(4.5rem);
+}
+.grid-item:hover{
+    background-size: 100%;
 }
 .grid-item:hover{
     transform: translateY(-0.2rem);
     cursor: pointer;
-    background: var(--bgcolour);
+    /* background: var(--bgcolour); */
 }
 .active-project:hover{
     border: 4px solid var(--green);
+    background: none;
 }
 .project-details{
     font-family: var(--ff-merriweather);
@@ -781,7 +793,7 @@ span h4{
     color: var(--green);
 }
 .address p span{
-   letter-spacing: 3px;
+   letter-spacing: 0.1rem;
 }
 .write-me-form{
     flex-basis: 55%;
