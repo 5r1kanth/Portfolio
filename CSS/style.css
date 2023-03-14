@@ -389,12 +389,19 @@ section{
 .tag-line{
     /* width: 90%; */
 }
-.tag-line h3{
+.tag-line h3,.tag-line h4{
     letter-spacing: 0.1rem;
     font-family: var(--ff-eczar);
     color: var(--light-slate);
     font-size: 2rem;
     font-weight: 400;
+}
+.tag-line h4{
+    margin-top: -20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.33rem;
 }
 .description{
     width: 92%;
@@ -415,28 +422,29 @@ section{
     color: var(--green);
 }
 
-.image{
-    z-index: 99;
-    width: 15%;
+.home-image{
+    width: 20%;
 }
-.image img{
+.home-image img{
     width: 200%;
-    height: 150%;
 }
 
 /* ---------------- About Section ---------------- */
 
 .about-text{
-    width: 58%;
+    width: 55%;
     height: 80%;
     padding: 1rem;
     z-index: 100;
     color: var(--white);
     text-align: justify;
 }
-.about-container .image{
+.about-container .about-image{
     width: 25%;
-    height: 80%;
+    /* height: 80%; */
+}
+.about-image img{
+    width: 100%;
 }
 .N{
     color: var(--green);
@@ -578,14 +586,14 @@ span h4{
     height: 100%;
 }
 .company{
-    padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
     font-size: 0.7rem;
     font-weight: 200;
     font-family: var(--ff-nunito);
     color: var(--light-slate);
     border-left: 0.1rem solid var(--lightest-navy);
-    /* border-radius: 0rem 2rem 2rem 0rem; */
-    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+    border-radius: 0rem 2rem 2rem 0rem;
+    /* clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%); */
     transition: 0.5s all ease-out;
 }
 .company span{
@@ -594,6 +602,7 @@ span h4{
 .company:hover,.active-company{
     background-color: var(--Eerie-Black);
     color: var(--green);
+    cursor: pointer;
 }
 .active-company{
     border-left: 0.1rem solid var(--green);
@@ -669,17 +678,30 @@ span h4{
 .grid-item{
     width: 25vw;
     height: 45vh;
-    background: var(--Eerie-Black);
-
-    background: url("/images/two.svg");
-    background-size: 0rem;
-    background-repeat: no-repeat;
-    background-position: center;
-    
+    background-color: var(--Eerie-Black);
+    flex-direction: column;
     border-radius: 0.5rem;
     padding: 1rem;
     border: 4px solid var(--Eerie-Black);
     transition: all 0.4s ease-out;
+}
+.grid-item img{
+    width: 0rem;
+    transition: all 0.4s ease-out;
+}
+.grid-item:hover img{
+    width: 100%;
+}
+.active-project{
+    position: relative;
+}
+.active-project img{
+    width: 0rem;
+    opacity: 0.1;
+    position: absolute;
+}
+.active-project:hover img{
+    height: 100%;
 }
 .grid-item span{
     font-family: var(--ff-eczar);
@@ -690,16 +712,11 @@ span h4{
 .grid-item:hover span{
     color: var(--green);
     font-size: 1.5rem;
-
-    transform: translateY(4.5rem);
-}
-.grid-item:hover{
-    background-size: 100%;
 }
 .grid-item:hover{
     transform: translateY(-0.2rem);
     cursor: pointer;
-    /* background: var(--bgcolour); */
+    background: var(--bgcolour);
 }
 .active-project:hover{
     border: 4px solid var(--green);
