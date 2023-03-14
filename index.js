@@ -24,7 +24,7 @@ window.onscroll = function() {
 var currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
     document.getElementById("logo").style.left = "2rem";
-    document.getElementById("navbar").style.top = "0.4rem";
+    document.getElementById("navbar").style.top = "0.65rem";
   } else {
     document.getElementById("logo").style.left = "0.5rem";
     document.getElementById("navbar").style.top = "-3rem";

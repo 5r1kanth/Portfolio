@@ -8,6 +8,13 @@
     font-size: 24px;
 }
 :root{
+
+    --facebook: #1877f2;
+    --linkedin: #0a66c2;
+    --github: #171515;
+    --instagram: #c32aa3;
+    --twitter: #1da1f2;
+
     --dark-navy: #020c1b;
     --navy: #0a192f;
     --light-navy: #112240;
@@ -78,7 +85,7 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background: var(--bgcolour);
     overflow-x: hidden;
@@ -115,7 +122,7 @@ textarea::-webkit-scrollbar-thumb{
 }
 .container{
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     /* scroll-snap */
     /* scroll-snap-type: y mandatory;
     overflow-y: scroll; */
@@ -126,6 +133,9 @@ textarea::-webkit-scrollbar-thumb{
 }
 .fixed{
     position: fixed;
+}
+.relative{
+    position: relative;
 }
 .center{
     display: flex;
@@ -140,6 +150,7 @@ textarea::-webkit-scrollbar-thumb{
 }
 /* ---------------- Logo ---------------- */
 #logo{
+    position: fixed;
     z-index: 200;
     left: 2rem;
     top: 0.8rem;
@@ -158,14 +169,14 @@ textarea::-webkit-scrollbar-thumb{
 #navbar {
     position: fixed;
     left: 4.2rem;
-    top: 0.4rem;
+    top: 0.65rem;
     width: fit-content;
     display: block;
     transition: top 0.3s;
 }
 #logo-text{
-    width: 6rem;
-    height: 3rem;
+    width: 100%;
+    height: 2.4rem;
 }
 #logo-text path:nth-child(1),path:nth-child(4){
     stroke: var(--logo-color-14);
@@ -180,7 +191,7 @@ textarea::-webkit-scrollbar-thumb{
     z-index: 100;
     left: 0.5rem;
     bottom: 0.5rem;
-    gap: 0rem;
+    /* gap: 0rem; */
 }
 .sicon,.openmedia,.closemedia,.nicon{
     width: 1.8rem;
@@ -192,10 +203,16 @@ textarea::-webkit-scrollbar-thumb{
     overflow: hidden;
     transition: all 0.2s ease-out;
 }
-.sicon:hover span,.nicon:hover span{
+/* .sicon:hover,.nicon:hover{
+    text-align: center;
+} */
+.sicon span,.nicon span{
     font-family: var(--ff-orbitron);
+}
+.sicon:hover span,.nicon:hover span,.active span{
     font-size: 0.6rem;
     letter-spacing: 0.1rem;
+    font-family: var(--ff-orbitron);
 }
 .sicon:hover i,.nicon:hover i{
     color: var(--lightest-slate);
@@ -205,33 +222,35 @@ textarea::-webkit-scrollbar-thumb{
     color: var(--sicon);
     font-size: 0.8rem;
 }
-.sicon:hover,.nicon:hover{
+.sicon:hover,.nicon:hover,.active{
     margin: 0.5rem 0rem 0.5rem 0rem;
     width: 5.5rem;
-    height: 1.2rem;
+    height: 1rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .social-media a,.navigation a{
+    width: 5.5rem;
     text-decoration: none;
     color: var(--white);
 }
+
 .facebook:hover{
-    background: #1877f2 ;
+    background: var(--facebook) ;
 }
 .linkedin:hover{
-    background: #0a66c2;
+    background: var(--linkedin);
 }
 .github:hover{
-    background: #171515;
+    background: var(--github);
 }
 .instagram:hover{
-    background: #c32aa3;
+    background: var(--instagram);
 }
 .twitter:hover{
-    background: #1da1f2;
+    background: var(--twitter);
 }
 /* .closemedia,.openmedia{
     display: none;
@@ -257,12 +276,11 @@ textarea::-webkit-scrollbar-thumb{
     z-index: 100;
     right: 0.5rem;
     top: 0.5rem;
-    gap: 0rem;
     display: flex;
     align-items: flex-end;
     flex-direction: column;
 }
-.home:hover,.about:hover,.experience:hover,.projects:hover,.contact:hover{
+.home:hover,.about:hover,.worked:hover,.projects:hover,.contact:hover{
     background: var(--nicontemp);
 }
 .active i{
@@ -270,9 +288,6 @@ textarea::-webkit-scrollbar-thumb{
     font-size: 0.65rem;
 }
 .active span{
-    font-family: var(--ff-orbitron);
-    font-size: 0.6rem;
-    letter-spacing: 0.1rem;
     transition: 0.2s ease-out all;
 }
 .active:hover span{
@@ -280,15 +295,9 @@ textarea::-webkit-scrollbar-thumb{
 }
 .active{
     background-color: var(--active-nicon);
-    margin: 0.5rem 0rem 0.5rem 0rem;
-    width: 5.5rem;
-    height: 1.2rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: all 0.2s ease-out;
 }
+
 /* .close,.open{
     display: none;
     background: none;
@@ -322,15 +331,16 @@ section{
     /* scroll-snap-align: start; */
 }
 
+
 /* ---------- Scroll animation ---------- */
 
 .move-left{
-    filter: blur(10px);
+    /* filter: blur(10px); */
     transform: translateX(100%);
     transition: all 0.5s;
 }
 .move-right{
-    filter: blur(10px);
+    /* filter: blur(10px); */
     transform: translateX(-100%);
     transition: all 0.5s;
 }
@@ -340,29 +350,13 @@ section{
 }
 
 
-.home-container,.about-container,.project-container,.contact-container{
+.home-container,.about-container,.experience-container,.project-container,.contact-container{
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 
 /* ---------------- Home Section ---------------- */
 
-@keyframes slideInLeft {
-    0% {
-      right: -13rem;
-    }
-    100% {
-      right: 4rem;
-    }
-  }
-  @keyframes slideInRight {
-    0% {
-      left: 0rem;
-    }
-    100% {
-      left: 4rem;
-    }
-  }
 .header-info{
     width: 60%;
     padding: 1rem;
@@ -396,15 +390,15 @@ section{
     font-size: 2rem;
     font-weight: 400;
 }
-.tag-line h4{
+/* .tag-line h4{
     margin-top: -20px;
     margin-bottom: 20px;
     font-weight: 500;
     font-size: 1rem;
     letter-spacing: 0.33rem;
-}
+} */
 .description{
-    width: 92%;
+    width: 90%;
     font-family: var(--ff-quattrocento);
 }
 .description p,.about-text p{
@@ -436,12 +430,12 @@ section{
     height: 80%;
     padding: 1rem;
     z-index: 100;
-    color: var(--white);
-    text-align: justify;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
 }
-.about-container .about-image{
+.about-image{
     width: 25%;
-    /* height: 80%; */
 }
 .about-image img{
     width: 100%;
@@ -458,29 +452,33 @@ my-span{
     color: var(--green);
 }
 .only-text p{
-    font-family: var(--ff-eczar);
+    text-align: justify;
+    font-family: var(--ff-nunito);
     font-size: 0.7rem;
+}
+
+.skill{
+    left: 0rem;
+}
+.experience{
+    left: 50%;
+    transform: translateX(-50%);
+}
+.education{
+    right: 0rem;
 }
 
 .about-details{
     width: 100%;
-    height: fit-content;
-    margin-top: 2rem;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction: row;
-    background-color: var(--bgcolour);
-    transition: all 1s ease-in-out;
 }
 .about-details span{
+    z-index: 100;
     width: 6rem;
     height: 1rem;
     border-radius: 1rem;
     border: 2px solid var(--green);
-    background: none;
     align-items: center;
-    font-family: var(--ff-orbitron);
+    font-family: var(--ff-merriweather);
     line-height: 1rem;
     letter-spacing: 2px;
     color: var(--green);
@@ -488,22 +486,18 @@ my-span{
     transition: all 1s ease-in-out;
 }
 span h4{
-    margin-top: -0.1rem;
     font-size: 0.6rem;
+    font-weight: 400;
     border-bottom: 2px solid var(--green);
-    margin-bottom: 0rem;
     transition: all 1s ease-in-out;
 }
 
 .about-details span:hover h4{
-    margin-top: 0rem;
     padding: 0.3rem 0rem;
-    width: fit-content;
-    border-bottom:2px solid var(--green);
-    font-family: var(--ff-orbitron);
     font-size: 1rem;
 }
 .about-details span:hover{
+    z-index: 101;
     width: 100%;
     height: 7rem;
     background: var(--Eerie-Black);
@@ -528,14 +522,10 @@ span h4{
     justify-content: space-evenly;
     font-family: var(--ff-nunito);
 }
-.edu-details .box,.skill-details .box,.exp-details .box{
-    width: fit-content;
-}
 .box:not(:last-child){
     margin-right: 1rem;
 }
 .edu-details h1,.skill-details h1,.exp-details h1{
-    /* font-weight: 400; */
     font-size: 0.5rem;
 }
 .edu-details h2,.skill-details h2,.exp-details h2{
@@ -670,6 +660,14 @@ span h4{
 
 /* ---------- Projects Section ---------- */
 
+#projects{
+    height: auto;
+}
+
+#projects{
+    justify-content: flex-start;
+    padding: 2rem;
+}
 .grid-container{
     display: grid;
     grid-template-columns: auto auto auto;
@@ -677,7 +675,7 @@ span h4{
 }
 .grid-item{
     width: 25vw;
-    height: 45vh;
+    height: 40vh;
     background-color: var(--Eerie-Black);
     flex-direction: column;
     border-radius: 0.5rem;
@@ -925,14 +923,24 @@ form .submit-btn{
 
 /* ---------- Small Screen ---------- */
 @media only screen and (max-width: 600px){
-    *{
+    /* *{
         font-size: 15px;
-    }
-    .description p{
+    } */
+    /* .description p{
         margin-top: 1.5rem;
         width: 100%;
         font-size: 0.85rem;
-    }
+    } */
+}
+@media (max-height: 700px) and (min-width: 700px), (max-width: 360px){
+    /* *{
+        font-size: 10px;
+    } */
+    /* .description p{
+        margin-top: 1.5rem;
+        width: 100%;
+        font-size: 0.85rem;
+    } */
 }
 
 
