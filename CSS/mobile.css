@@ -1,0 +1,230 @@
+/* @import url("style.css"); */
+:root{
+
+    --facebook: #1877f2;
+    --linkedin: #0a66c2;
+    --github: #171515;
+    --instagram: #c32aa3;
+    --twitter: #1da1f2;
+
+    --dark-navy: #020c1b;
+    --navy: #0a192f;
+    --light-navy: #112240;
+    --lightest-navy: #233554;
+    --navy-shadow: rgba(2,12,27,0.7);
+    --dark-slate: #495670;
+    --slate: #8892b0;
+    --light-slate: #a8b2d1;
+    --lightest-slate: #ccd6f6;
+    --white: #e6f1ff;
+    --green: #64ffda;
+    --green-tint: rgba(100,255,218,0.1);
+    --pink: #f57dff;
+    --blue: #57cbff;
+    /* My colours */
+    --mygreen: #CCF381;
+    --Coral: #F96167;
+    --mustard: #FCE77D;
+    --yellow: #F9D342;
+    --Charcoal: #292826;
+    --pink: #DF678C;
+    --red: #D2302C;
+    --mint: #8BD8BD;
+    --sky-blue: #8AAAE5;
+    --teal: #358597;
+    --purple: #E2D1F9;
+    --Turquoise: #44E3FF;
+    --springteal: #0EA7A5; 
+    --flagsaffron: #FF9933;
+    --flagwhite: #ffffff;
+    --flaggreen: #138808;
+    --flagchakra: #000080;
+    --flaggradient: linear-gradient(var(--flagsaffron), var(--flagsaffron), var(--flagwhite), var(--flagchakra), var(--flagwhite), var(--flaggreen), var(--flaggreen));
+
+
+    --bgcolour: var(--Dark-Gunmetal);
+--temp: #63B7B7;
+    --brightrose: #EA37A3;
+    --pictonblue: #2BBEF2;
+    --royalpurple: #6B4EE6;
+    --Dark-Gunmetal: #201932;
+    --mirage-light: #362f46;
+    --Eerie-Black: #1A1428;
+
+    --jungle-green: #1D9978;
+--nicontemp: #CF1B24;
+    --logo-color-14: var(--green);
+    --logo-color-23: var(--green);
+    --sicon: var(--light-slate);
+    --nicon: var(--light-slate);
+    --active-nicon: var(--jungle-green);
+    --scroll-barwidth: 17px;
+    --scroll-bar-color: var(--slate);
+
+    
+    --ff-merriweather: 'Merriweather Sans', sans-serif;
+    --ff-nunito: 'Nunito', sans-serif;
+    --ff-orbitron: 'Orbitron', sans-serif;
+    --ff-quattrocento: 'Quattrocento Sans', sans-serif;
+    --ff-roboto: 'Roboto Mono', monospace;
+    --ff-eczar: 'Eczar', serif;
+
+    --border-green: 2px solid green;
+    --border-red: 2px solid red;
+    --border-blue: 2px solid blue;
+}
+@media screen and (max-width: 360px){
+    /* ----- common ----- */
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+    .container{
+        width: 100%;
+    }
+    #logo{
+        left: 1rem;
+    }
+    #navbar {
+        left: 3rem;
+    }
+    section{
+        /* display: flex;
+        justify-content: center;
+        flex-direction: column; */
+        width: 100vw;
+        height: 100vh; 
+        /* scroll-snap */
+        /* scroll-snap-align: start; */
+    }
+    .home-container,.about-container,.experience-container,.project-container,.contact-container{
+        width: 100%;
+        height: 100%;
+    }
+    /* ----- Social-Media/Navigation ----- */
+    .social-media{
+        z-index: 100;
+        left: 0.25rem;
+        bottom: 0.5rem;
+    }
+    .navigation{
+        z-index: 100;
+        right: 0.25rem;
+        top: 0.5rem;
+    }
+    .sicon,.nicon{
+        width: 2.5rem;
+        height: 2.5rem;
+        line-height: 2.7rem;
+    }
+    .sicon{
+        background-color: var(--light-slate);
+        margin-top: 0.5rem;
+    }
+    .nicon{
+        margin-bottom: 0.5rem;
+    }
+    .sicon i,.nicon i{
+        color: var(--sicon);
+        font-size: 1.4rem;
+    }
+    .sicon span,.nicon span{
+        display: none;
+    }
+    .sicon:hover,.nicon:hover,.active{
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    .active{
+        margin-top: 0rem;
+    }
+    .sicon:hover i,.nicon:hover i{
+        font-size: 1.4rem;
+    }
+    .active i{
+        color: var(--light-slate);
+        font-size: 1.4rem;
+    }
+    .active{
+        background-color: var(--active-nicon);
+        transition: all 0.2s ease-out;
+    }
+    .home:hover,.about:hover,.worked:hover,.projects:hover,.contact:hover{
+        background-color: var(--nicontemp);
+    }
+    .facebook i{
+        color: var(--facebook) ;
+    }
+    .linkedin i{
+        color: var(--linkedin);
+    }
+    .github i{
+        color: var(--github);
+    }
+    .instagram i{
+        color: var(--instagram);
+    }
+    .twitter i{
+        color: var(--twitter);
+    }
+
+    /* ----- Home Section ----- */
+
+    .home-container{
+        position: relative;
+    }
+    .header-info,.home-image{
+        position: absolute;
+    }
+    .header-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 10%;
+        width: 90%;
+        height: 80%;
+        gap: 1rem;
+    }
+    .home-image{
+        width: 25%;
+        transform: translate(100%, -10%);
+        /* right: 0rem; */
+    }
+    .greeting h1{
+        text-align: center;
+        font-size: 1rem;
+    }
+    .full-name h2{
+        text-align: center;
+        letter-spacing: 0.2rem;
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+    .tag-line{
+        width: 50%;
+        /* margin: 1rem 0rem 1rem 0rem; */
+    }
+    .tag-line h3,.tag-line h4{
+        font-size: 2.2rem;
+        line-height: 3.5rem;
+    }
+    .description{
+        width: 100%;
+    }
+    .description p{
+        text-align: center;
+        /* letter-spacing: -1px; */
+        line-height: 1.5rem;
+        font-size: 1.2rem;
+    }
+    .description p span{
+        font-size: 1.1rem;
+    }
+    /* ----- About Section ----- */
+    /* ----- Experience Section ----- */
+    /* ----- Projects Section ----- */
+    /* ----- Contact Section ----- */
+
+}
