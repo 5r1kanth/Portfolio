@@ -73,7 +73,7 @@
     --border-red: 2px solid red;
     --border-blue: 2px solid blue;
 }
-@media screen and (max-width: 360px){
+@media screen and (max-width: 415px){
     /* ----- common ----- */
     *{
         padding: 0;
@@ -193,9 +193,14 @@
         gap: 1rem;
     }
     .home-image{
-        width: 25%;
-        transform: translate(100%, -10%);
+        width: 50vw;
+        height: 35vh;
+        transform: translate(40%, 0%);
         /* right: 0rem; */
+    }
+    .home-image img{
+        width: 100%;
+        height: 100%;
     }
     .greeting h1{
         text-align: center;
@@ -208,7 +213,8 @@
         line-height: 3rem;
     }
     .tag-line{
-        width: 50%;
+        width: 50vw;
+        height: 35vh;
         /* margin: 1rem 0rem 1rem 0rem; */
     }
     .tag-line h3,.tag-line h4{

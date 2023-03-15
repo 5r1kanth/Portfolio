@@ -498,7 +498,7 @@ span h4{
     transition: all 1s ease-in-out;
 }
 
-@media screen and (min-width: 460px) {
+@media screen and (min-width: 415px) {
     
 
 .about-details span:hover h4{
