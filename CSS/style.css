@@ -207,9 +207,11 @@ textarea::-webkit-scrollbar-thumb{
     overflow: hidden;
     transition: all 0.2s ease-out;
 }
-/* .sicon:hover,.nicon:hover{
-    text-align: center;
-} */
+.sicon:hover,.nicon:hover,.active{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .sicon span,.nicon span{
     font-family: var(--ff-orbitron);
 }
@@ -231,9 +233,9 @@ textarea::-webkit-scrollbar-thumb{
     width: 5.5rem;
     height: 1rem;
     cursor: pointer;
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
 }
 .social-media a,.navigation a{
     width: 5.5rem;
@@ -496,6 +498,9 @@ span h4{
     transition: all 1s ease-in-out;
 }
 
+@media screen and (min-width: 460px) {
+    
+
 .about-details span:hover h4{
     padding: 0.3rem 0rem;
     font-size: 1rem;
@@ -510,6 +515,7 @@ span h4{
 .about-details:hover span:not(:hover){
     width: 0rem;
     border: none;
+}
 }
 
 /* Skill, Education, Experience box css */

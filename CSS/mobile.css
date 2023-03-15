@@ -114,10 +114,15 @@
         right: 0.25rem;
         top: 0.5rem;
     }
-    .sicon,.nicon{
+    .sicon,.nicon,.sicon:hover,.nicon:hover,.active{
         width: 2.5rem;
         height: 2.5rem;
-        line-height: 2.7rem;
+        line-height: 3rem;
+    }
+    .sicon:hover,.nicon:hover,.active{
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .sicon{
         background-color: var(--light-slate);
@@ -132,10 +137,6 @@
     }
     .sicon span,.nicon span{
         display: none;
-    }
-    .sicon:hover,.nicon:hover,.active{
-        width: 2.5rem;
-        height: 2.5rem;
     }
     .active{
         margin-top: 0rem;
@@ -170,7 +171,8 @@
         color: var(--twitter);
     }
 
-    /* ----- Home Section ----- */
+
+    /* ----- Sections Common ----- */
 
     .home-container{
         position: relative;
@@ -178,6 +180,9 @@
     .header-info,.home-image{
         position: absolute;
     }
+    
+    /* ----- Home Section ----- */
+
     .header-info{
         display: flex;
         flex-direction: column;
@@ -223,6 +228,102 @@
         font-size: 1.1rem;
     }
     /* ----- About Section ----- */
+
+    #about{
+        height: auto;
+    }
+    .about-container{
+        flex-direction: column;
+    }
+    .about-container{
+        margin-left: 1rem;
+        margin-top: 1rem;
+    }
+    .about-image{
+        width: 50%;
+    }
+    .about-image img{
+        width: 75%;
+    }
+    .about-text{
+        width: 90%;
+        gap: 1rem;
+    }
+    .only-text p{
+        text-align: center;
+        font-size: 0.9rem;
+        line-height: 0.9rem;
+    }
+    .only-text my-span{
+        font-size: 0.65rem;
+    }
+    .about-details{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .about-details span{
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+        color: var(--lightest-slate);
+        border: none;
+        border: 1px solid var(--green);
+    }
+    .education,.skill,.experience{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    span h4{
+        padding: 0.3rem 0rem;
+        font-size: 1rem;
+    }
+    .edu-details,.skill-details,.exp-details{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.5rem;
+    }
+    .box{
+        width: 100%;
+        margin: 0rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
+    }
+    .skill-details h1,.skill-details h2,.skill-details h3,.edu-details h1,.edu-details h2,.edu-details h3,.exp-details h1,.exp-details h2,.exp-details h3{
+        text-align: center;
+        letter-spacing: 1px;
+    }
+    .skill-details h1,.skill-details h2,.skill-details h3{
+        width: 35%;
+    }
+    .edu-details h1,.exp-details h1{
+        width: 25%;
+    }
+    .skill h1,.experience h1,.education h1{
+        font-size: 0.7rem;
+    }
+    .skill h2,.experience h2,.education h2{
+        font-size: 0.7rem;
+    }
+    .skill h3,.experience h3,.education h3{
+        font-size: 0.7rem;
+    }
+    .edu-details my-span,.skill-details my-span,.exp-details my-span{
+        font-size: 0.6rem;
+        font-weight: 400;
+    }
+    .edu-details h2,.exp-details h2,.edu-details h3,.exp-details h3{
+        width: 37%;
+    }
+    .box:not(:last-child){
+        margin-right: 0.2rem;
+    }
+
     /* ----- Experience Section ----- */
     /* ----- Projects Section ----- */
     /* ----- Contact Section ----- */
