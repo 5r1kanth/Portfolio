@@ -73,9 +73,9 @@
     --border-red: 2px solid red;
     --border-blue: 2px solid blue;
 
-    --mobile-section-margin: 10vh;
+    --mobile-section-margin: 5vh;
 }
-@media screen and (max-width: 415px){
+@media screen and (max-width: 425px){
     /* ----- common ----- */
     *{
         padding: 0;
@@ -220,10 +220,8 @@
         line-height: 3rem;
     }
     .tag-line{
-        /* border: var(--border-blue); */
         width: 30vw;
         height: 35vh;
-        /* margin: 1rem 0rem 1rem 0rem; */
     }
     .tag-line h3,.tag-line h4{
         font-size: 2.2rem;
@@ -234,7 +232,6 @@
     }
     .description p{
         text-align: center;
-        /* letter-spacing: -1px; */
         line-height: 1.5rem;
         font-size: 1.2rem;
     }
@@ -247,7 +244,6 @@
         flex-direction: column;
     }
     .about-container{
-        /* margin-left: 1rem; */
         margin-top: 1rem;
     }
     .about-image{
@@ -336,15 +332,94 @@
     }
     
     section:not(:last-child){
-        border: var(--border-red);
         margin-bottom: var(--mobile-section-margin);
     }
 
     /* ----- Experience Section ----- */
+    #worked{
+        /* height: 100vh; */
+    }
+    .experience-container{
+        width: 80vw;
+        gap: 1rem;
+        padding: 0rem;
+        margin-top: 2rem;
+    }
+    .experience-container h1{
+        font-size: 1.9rem;
+        letter-spacing: 0rem;
+    }
+    .experience-details{
+        width: 90%;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .company-names{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    .company-details{
+        width: 100%;
+    }
+    .company{
+        width: 33%;
+        padding: 0rem;
+        border-left: none;
+        border-top: none;
+        border-bottom: 0.1rem solid var(--lightest-navy);
+        border-radius: 0rem 0rem 1.5rem 1.5rem;
+        /* clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%); */
+    }
+    .company span{
+        font-size: 0.7rem;
+    }
+    .company:hover,.active-company{
+        background-color: var(--bgcolour);
+    }
+    .active-company{
+        border-bottom: 0.1rem solid var(--green);
+    }
+    .work-details{
+        padding-left: 0.5rem;
+    }
+    .work-details h2,.work-details h2 span,.work-details h3{
+        font-size: 1rem;
+    }
+    .work-details h3,.work-details h3 span{
+        font-size: 0.8rem;
+    }
+    .work-details h4{
+        font-size: 0.6rem;
+    }
+    .work-details ul li{
+        font-size: 0.75rem;
+        line-height: 0.9rem;
+    }
+
+    .experience-image{
+        display: block;
+        width: 100%;
+        display: flex;
+    }
+    .experience-image img{
+        width: 80%;
+    }
     /* ----- Projects Section ----- */
 
+    /* #worked{
+        border: var(--border-green);
+    }
+    #projects{
+        border: var(--border-blue);
+    }
+    #contact{
+        border: var(--border-red);
+    } */
     .project-container{
-        width: 100%;
         flex-direction: column;
         gap: 1rem;
     }
@@ -356,8 +431,8 @@
         grid-template-columns: auto;
     }
     .grid-item{
-        width: 75vw;
-        height: 30vh;
+        width: calc(3*(100vw/4));
+        height: calc(2.5*(100vw/4));
     }
     .grid-item span{
         font-size: 1rem;
@@ -394,7 +469,6 @@
     #footer{
         margin-top: calc(-1*var(--mobile-section-margin));
         height: 10vh;
-        /* margin-left: 10vw; */
     }
     .copyright{
         width: 90vw;

@@ -126,7 +126,7 @@ textarea::-webkit-scrollbar-thumb{
 
 .container{
     width: 100%;
-    /* height: 100%; */
+    height: 100%;
     /* scroll-snap */
     /* scroll-snap-type: y mandatory;
     overflow-y: scroll; */
@@ -156,7 +156,7 @@ textarea::-webkit-scrollbar-thumb{
 #logo{
     position: fixed;
     z-index: 200;
-    left: 2rem;
+    left: 1rem;
     top: 0.8rem;
     transition: left 0.3s;
 }
@@ -498,7 +498,7 @@ span h4{
     transition: all 1s ease-in-out;
 }
 
-@media screen and (min-width: 415px) {
+/* @media screen and (min-width: 425px) { */
     
 
 .about-details span:hover h4{
@@ -516,7 +516,7 @@ span h4{
     width: 0rem;
     border: none;
 }
-}
+/* } */
 
 /* Skill, Education, Experience box css */
 
@@ -553,7 +553,12 @@ span h4{
 
 /* ---------- Experience Section ---------- */
 
+#worked{
+    align-items: center;
+    /* height: 100vh; */
+}
 .experience-container{
+    align-items: center;
     justify-content: flex-start;
     width: 80%;
     height: 80%;
@@ -592,7 +597,8 @@ span h4{
     font-family: var(--ff-nunito);
     color: var(--light-slate);
     border-left: 0.1rem solid var(--lightest-navy);
-    border-radius: 0rem 2rem 2rem 0rem;
+    border-top: 0.1rem solid var(--lightest-navy);
+    border-radius: 0rem 4rem 0rem 4rem;
     /* clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%); */
     transition: 0.5s all ease-out;
 }
@@ -606,6 +612,7 @@ span h4{
 }
 .active-company{
     border-left: 0.1rem solid var(--green);
+    border-top: 0.1rem solid var(--green);
     /* border-right: 1rem solid var(--green); */
 }
 .work-details{
@@ -667,6 +674,9 @@ span h4{
 .work-details.active-company-details{
     display: block;
 }
+.experience-image{
+    display: none;
+}
 
 /* ---------- Projects Section ---------- */
 
@@ -678,13 +688,14 @@ span h4{
     justify-content: flex-start;
 }
 .project-container{
+    height: 100vh;
     flex-direction: column;
 }
 .projects-heading{
     font-size: 2rem;
     font-family: var(--ff-eczar);
     color: var(--light-slate);
-    /* display: none; */
+    display: none;
 }
 .grid-container{
     display: grid;
