@@ -676,7 +676,15 @@ span h4{
 
 #projects{
     justify-content: flex-start;
-    padding: 2rem;
+}
+.project-container{
+    flex-direction: column;
+}
+.projects-heading{
+    font-size: 2rem;
+    font-family: var(--ff-eczar);
+    color: var(--light-slate);
+    /* display: none; */
 }
 .grid-container{
     display: grid;
@@ -768,6 +776,7 @@ span h4{
     font-size: 0.5rem;
     list-style: none;
 }
+
 /* ---------- Skills Section ---------- */
 
 /* ---------- Hobbies Section ---------- */
@@ -787,6 +796,7 @@ span h4{
 .primary-contacts{
     flex-basis: 40%;
     flex-direction: column;
+    text-align: center;
 }
 .primary-contacts h1{
     color: var(--lightest-slate);
@@ -810,6 +820,7 @@ span h4{
 }
 .primary-contacts p span,.address p span{
     color: var(--light-slate);
+    font-family: var(--ff-eczar);
     font-size: 0.7rem;
     transition: all 0.5s ease-out;
 }
