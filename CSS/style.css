@@ -787,6 +787,9 @@ span h4{
     font-size: 0.5rem;
     list-style: none;
 }
+.active-project:hover .project-tech-list ul li{
+    color: var(--green);
+}
 
 /* ---------- Skills Section ---------- */
 

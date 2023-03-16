@@ -75,7 +75,7 @@
 
     --mobile-section-margin: 0vh;
 }
-@media screen and (max-width: 425px){
+@media screen and (max-width: 450px){
     /* @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) */
     /* ******************** common ******************** */
     *{
@@ -198,7 +198,7 @@
         align-items: start;
         justify-content: flex-start;
         width: 100%;
-        gap: 1rem;
+        gap: 3vh;
     }
     .home-image{
         width: 50vw;
@@ -445,6 +445,7 @@
         /* width: 100%; */
         width: calc(3*(100vw/4));
         height: calc(2.5*(100vw/4));
+        padding: 8vw;
     }
     .grid-item span{
         font-size: 1rem;
@@ -453,6 +454,7 @@
         font-size: 2rem;
     }
     .project-title h1{
+        text-align: center;
         font-size: 1rem;
     }
     .project-desc p{
@@ -496,4 +498,9 @@
         letter-spacing: 0.1rem;
     }
 
+}
+@media screen and (max-width:3230px){
+    .grid-item{
+        padding: 6vw;
+    }
 }
