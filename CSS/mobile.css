@@ -73,10 +73,11 @@
     --border-red: 2px solid red;
     --border-blue: 2px solid blue;
 
-    --mobile-section-margin: 5vh;
+    --mobile-section-margin: 0vh;
 }
 @media screen and (max-width: 425px){
-    /* ----- common ----- */
+    /* @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) */
+    /* ******************** common ******************** */
     *{
         padding: 0;
         margin: 0;
@@ -85,6 +86,9 @@
     }
     .container{
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* gap: 5rem; */
     }
     #logo{
         left: 1rem;
@@ -92,25 +96,7 @@
     #navbar {
         left: 3rem;
     }
-    section{
-        /* display: flex;
-        justify-content: center;
-        flex-direction: column; */
-        width: 100vw;
-        height: 100vh;
-        /* margin-left: 10vw; */
-        /* scroll-snap */
-        /* scroll-snap-align: start; */
-    }
-    .about-container,.experience-container,.project-container,.contact-container{
-        width: 100%;
-        height: 100%;
-        padding: 7vw;
-    }
-    #about,#worked,#projects,#contact{
-        height: auto;
-    }
-    /* ----- Social-Media/Navigation ----- */
+    /* ******************** Social-Media/Navigation ******************** */
     .social-media{
         z-index: 100;
         left: 0.25rem;
@@ -179,31 +165,45 @@
     }
 
 
-    /* ----- Sections Common ----- */
+    /* ******************** Sections Common ******************** */
 
+    section{
+        width: 100vw;
+        height: 100vh;
+    }
     .home-container{
+        height: 100vh;
         position: relative;
+        align-items: start;
     }
     .header-info,.home-image{
         position: absolute;
     }
+    #worked,#home,#about,#projects,#contact,#footer{
+        align-items: center;
+    }
+    .home-container,.about-container,.experience-container,.project-container,.contact-container{
+        width: 80%;
+        margin: 5vh 0 5vh 0;
+    }
+    .about-container,.experience-container,.project-container,.contact-container{
+        height: auto;
+    }
     
-    /* ----- Home Section ----- */
+    /* ******************** Home Section ******************** */
 
     .header-info{
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        width: 80vw;
-        height: 80%;
+        align-items: start;
+        justify-content: flex-start;
+        width: 100%;
         gap: 1rem;
     }
     .home-image{
         width: 50vw;
         height: calc(3.5rem*4);
-        /* height: 35vh; */
-        transform: translate(50%, 0%);
-        /* right: 0rem; */
+        transform: translate(20vw, 30vh);
     }
     .home-image img{
         width: 100%;
@@ -216,7 +216,7 @@
     .full-name h2{
         text-align: center;
         letter-spacing: 0.2rem;
-        font-size: 2.5rem;
+        font-size: 10vw;
         line-height: 3rem;
     }
     .tag-line{
@@ -232,36 +232,43 @@
     }
     .description p{
         text-align: center;
-        line-height: 1.5rem;
-        font-size: 1.2rem;
+        line-height: 1.2rem;
+        font-size: 1rem;
     }
     .description p span{
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
-    /* ----- About Section ----- */
+    /* ******************** About Section ******************** */
 
+    #about{
+        justify-content: flex-start;
+        height: auto;
+    }
     .about-container{
         flex-direction: column;
-    }
-    .about-container{
-        margin-top: 1rem;
+        gap: 1rem;
     }
     .about-image{
         width: 50%;
     }
     .about-image img{
-        width: 75%;
+        width: 100%;
     }
     .about-text{
-        width: 100%;
+        width: 90%;
+        height: 100%;
+        padding: 0;
         gap: 1rem;
     }
+    .only-text{
+        width: 100%;
+    }
     .only-text p{
-        text-align: center;
-        font-size: 0.9rem;
+        font-size: 0.75rem;
         line-height: 0.9rem;
     }
     .only-text my-span{
+        font-family: var(--ff-merriweather);
         font-size: 0.65rem;
     }
     .about-details{
@@ -272,7 +279,7 @@
     }
     .about-details span{
         position: relative;
-        width: fit-content;
+        width: 100%;
         height: fit-content;
         color: var(--lightest-slate);
         border: none;
@@ -335,22 +342,26 @@
         margin-bottom: var(--mobile-section-margin);
     }
 
-    /* ----- Experience Section ----- */
+    /* ******************** Experience Section ******************** */
+
     #worked{
-        /* height: 100vh; */
+        justify-content: flex-start;
+        height: auto;
     }
     .experience-container{
-        width: 80vw;
-        gap: 1rem;
-        padding: 0rem;
-        margin-top: 2rem;
+        gap: 0rem;
+        text-align: center;
     }
     .experience-container h1{
-        font-size: 1.9rem;
+        width: 100%;
+        font-size: 1.7rem;
         letter-spacing: 0rem;
     }
+    .experience-container h1::before{
+        width: 0;
+    }
     .experience-details{
-        width: 90%;
+        width: 95%;
         flex-direction: column;
         gap: 1rem;
     }
@@ -360,14 +371,15 @@
         width: 100%;
         height: auto;
         text-align: center;
+        justify-content: center;
         gap: 0.5rem;
     }
     .company-details{
         width: 100%;
     }
     .company{
-        width: 33%;
-        padding: 0rem;
+        width: fit-content;
+        padding: 0rem 0.5rem 0rem 0.5rem;
         border-left: none;
         border-top: none;
         border-bottom: 0.1rem solid var(--lightest-navy);
@@ -408,29 +420,29 @@
     .experience-image img{
         width: 80%;
     }
-    /* ----- Projects Section ----- */
+    /* ******************** Projects Section ******************** */
 
-    /* #worked{
-        border: var(--border-green);
-    }
+    
+    
     #projects{
-        border: var(--border-blue);
+        align-items: center;
     }
-    #contact{
-        border: var(--border-red);
-    } */
     .project-container{
         flex-direction: column;
-        gap: 1rem;
+        justify-content: flex-start;
     }
     .projects-heading{
+        text-align: center;
+        width: 100%;
         display: block;
     }
     .grid-container{
+        width: 90%;
         gap: 1rem;
         grid-template-columns: auto;
     }
     .grid-item{
+        /* width: 100%; */
         width: calc(3*(100vw/4));
         height: calc(2.5*(100vw/4));
     }
@@ -451,28 +463,31 @@
     .project-tech-list ul li{
         font-size: 0.8rem;
     }
-    /* ----- Contact Section ----- */
+    /* ******************** Contact Section ******************** */
 
     #contact{
-        height: 90vh;
+        height: auto;
+        justify-content: flex-start;
     }
     .contact-container{
-        padding: 0rem;
         flex-direction: column;
     }
     .write-me-form{
         width: 90%;
+        height: 100%;
         padding: 0.5rem;
     }
-    /* ----- Copyright Section ----- */
+    /* ******************** Copyright Section ******************** */
 
     #footer{
-        margin-top: calc(-1*var(--mobile-section-margin));
-        height: 10vh;
+        justify-content: flex-start;
+        /* margin-top: calc(-1*var(--mobile-section-margin)); */
+        height: auto;
     }
     .copyright{
-        width: 90vw;
-        gap: 0rem;
+        width: 80%;
+        padding: 1rem;
+        gap: 0.5rem;
     }
     .copyright p{
         width: 40%;
@@ -480,4 +495,5 @@
         font-size: 0.5rem;
         letter-spacing: 0.1rem;
     }
+
 }

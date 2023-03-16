@@ -498,7 +498,7 @@ span h4{
     transition: all 1s ease-in-out;
 }
 
-/* @media screen and (min-width: 425px) { */
+@media screen and (min-width: 768px) {
     
 
 .about-details span:hover h4{
@@ -516,7 +516,7 @@ span h4{
     width: 0rem;
     border: none;
 }
-/* } */
+}
 
 /* Skill, Education, Experience box css */
 
@@ -800,7 +800,7 @@ span h4{
 }
 .contact-container{
     gap: 1rem;
-    max-width: 80%;
+    width: 80%;
     font-family: var(--ff-eczar);
 }
 
