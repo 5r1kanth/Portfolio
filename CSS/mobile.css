@@ -1,4 +1,4 @@
-/* @import url("style.css"); */
+@import url("style.css");
 :root{
 
     --facebook: #1877f2;
@@ -21,7 +21,8 @@
     --green-tint: rgba(100,255,218,0.1);
     --pink: #f57dff;
     --blue: #57cbff;
-    /* My colours */
+
+
     --mygreen: #CCF381;
     --Coral: #F96167;
     --mustard: #FCE77D;
@@ -172,9 +173,10 @@
         height: 100vh;
     }
     .home-container{
-        height: 100vh;
+        /* border: var(--border-blue); */
+        min-height: 100vh;
         position: relative;
-        align-items: start;
+        align-items: center;
     }
     .header-info,.home-image{
         position: absolute;
@@ -195,15 +197,15 @@
     .header-info{
         display: flex;
         flex-direction: column;
-        align-items: start;
+        align-items: center;
         justify-content: flex-start;
         width: 100%;
-        gap: 3vh;
+        /* gap: 3vh; */
     }
     .home-image{
-        width: 50vw;
+        width: calc(3rem*4);
         height: calc(3.5rem*4);
-        transform: translate(20vw, 30vh);
+        transform: translate(20vw, 0vh);
     }
     .home-image img{
         width: 100%;
@@ -216,16 +218,20 @@
     .full-name h2{
         text-align: center;
         letter-spacing: 0.2rem;
-        font-size: 10vw;
+        /* font-size: 10vw; */
+        font-size: clamp(2rem, 10vw, 5rem);
         line-height: 3rem;
     }
     .tag-line{
-        text-align: center;
+        margin: 2rem 0rem 2rem 0rem;
+        transform: translateX(-50%);
+        /* text-align: center; */
         width: 30vw;
         height: 35vh;
     }
     .tag-line h3,.tag-line h4{
-        font-size: 2.2rem;
+        font-size: clamp(2rem, 8vw, 5rem);
+        /* font-size: 2.2rem; */
         line-height: calc(35vh/4);
     }
     .description{
@@ -500,11 +506,15 @@
     }
 
 }
-@media screen and (max-width:3230px){
+@media screen and (max-width:330px){
+    *{
+        font-size: var(--fz-xxs);
+    }
     .grid-item{
         padding: 6vw;
     }
 }
+
 @media (min-width:450px) and (max-width:600px) {
     *{
         font-size: 18px;
@@ -522,7 +532,7 @@
         height: 35vh; */
     }
     .tag-line h3,.tag-line h4{
-        /* font-size: clamp(40px, 8vw, 80px);; */
+        /* font-size: clamp(2.5rem, 8vw, 5rem);; */
         /* font-size: 3rem; */
         /* line-height: calc(35vh/4); */
     }
