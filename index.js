@@ -23,10 +23,12 @@ var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
 var currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
-    document.getElementById("logo").style.left = "1rem";
-    // document.getElementById("navbar").style.top = "0.65rem";
+    document.getElementById("logo").style.left = "2vw";
+    document.getElementById("logo").style.top = "1vw";
+    // document.getElementById("navbar").style.top = "2vw";
   } else {
-    document.getElementById("logo").style.left = "0.5rem";
+    document.getElementById("logo").style.left = "0.5em";
+    // document.getElementById("logo").style.top = "0.5em";
     // document.getElementById("navbar").style.top = "-3rem";
   }
   prevScrollpos = currentScrollPos;
@@ -106,3 +108,52 @@ switch(spanname){
 }
 
 } */
+
+
+
+// -------- Small Screen close and open icons --------
+{/* <script> */}
+    var open = document.getElementById("openicon")
+    var close = document.getElementById("closeicon");
+    const navicons = document.querySelectorAll(".navigation .icon");
+
+    function openmenu(){
+        open.style.display = "none";
+        close.style.display = "block";
+        navicons.forEach(navicon =>{
+            navicon.style.display = "block";
+            navicon.style.height = "50px";
+            navicon.style.transition = "all 0.3s ease-out";
+        })
+    }
+    function closemenu(){
+        open.style.display = "block";
+        close.style.display = "none";
+        navicons.forEach(navicon =>{
+            navicon.style.height = "0";
+            navicon.style.transition = "all 0.3s ease-out";
+        })
+    }
+
+    var openmedia = document.getElementById("openmedia")
+    var closemedia = document.getElementById("closemedia");
+    const mediaicons = document.querySelectorAll(".social-media .sicon");
+
+    function openmed(){
+        openmedia.style.display = "none";
+        closemedia.style.display = "block";
+        mediaicons.forEach(mediaicon =>{
+            mediaicon.style.display = "block";
+            mediaicon.style.height = "50px";
+            mediaicon.style.transition = "all 0.3s ease-out";
+        })
+    }
+    function closemed(){
+        openmedia.style.display = "block";
+        closemedia.style.display = "none";
+        mediaicons.forEach(mediaicon =>{
+            mediaicon.style.height = "0";
+            mediaicon.style.transition = "all 0.3s ease-out";
+        })
+    }
+// </script>

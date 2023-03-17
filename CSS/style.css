@@ -6,7 +6,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-size: 24px;
+    /* font-size: 24px; */
 }
 :root{
 
@@ -40,11 +40,15 @@
     --fz-xl: 20px;
     --fz-xxl: 22px;
     --fz-heading: 32px;
+    --fz-big-heading: 44px;
+    --icon-size: 50px;
     --border-radius: 4px;
     --nav-height: 100px;
     --nav-scroll-height: 70px;
     --tab-height: 42px;
     --tab-width: 120px;
+
+    --font-sans: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
 
     /* My colours */
     --mygreen: #CCF381;
@@ -80,8 +84,8 @@
 --nicontemp: #CF1B24;
     --logo-color-14: var(--green);
     --logo-color-23: var(--green);
-    --sicon: var(--light-slate);
-    --nicon: var(--light-slate);
+    --sicon: var(--lightest-slate);
+    --nicon: var(--lightest-slate);
     --active-nicon: var(--jungle-green);
     --scroll-barwidth: 17px;
     --scroll-bar-color: var(--slate);
@@ -97,6 +101,9 @@
     --border-green: 2px solid green;
     --border-red: 2px solid red;
     --border-blue: 2px solid blue;
+
+    --easing: cubic-bezier(0.645,0.045,0.355,1);
+    --transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
 }
 html{
     scroll-behavior: smooth;
@@ -104,7 +111,8 @@ html{
 body{
     width: 100vw;
     height: 100vh;
-    background: var(--bgcolour);
+    font-size: var(--fz-xxl);
+    background-color: var(--bgcolour);
     overflow-x: hidden;
 }
 body::-webkit-scrollbar{
@@ -172,92 +180,101 @@ textarea::-webkit-scrollbar-thumb{
 #logo{
     position: fixed;
     z-index: 200;
-    left: 1rem;
-    top: 0.8rem;
-    transition: left 0.3s;
+    left: 2vw;
+    top: 1vw;
+    width: calc(1.8*var(--icon-size));
+    height: calc(1.2*var(--icon-size));
+    transition: var(--transition);
 }
 #logo-icon{
-    width: 2rem;
-    height: 2rem;
+    width: var(--icon-size);
+    height: var(--icon-size);
 }
-#logo-icon path:nth-child(1),path:nth-child(4){
+#logo-icon path{
     stroke: var(--logo-color-14);
 }
+#logo-icon path:nth-child(1),path:nth-child(4){
+    /* stroke: var(--logo-color-14); */
+}
 #logo-icon path:nth-child(2),path:nth-child(3){
-    fill: var(--logo-color-23);
+    /* fill: var(--logo-color-23); */
 }
 #navbar {
     position: fixed;
-    left: 4.2rem;
-    top: 0.65rem;
+    left: calc(2.5vw + var(--icon-size));
+    top: 2vw;
     width: fit-content;
     display: block;
-    transition: top 0.3s;
+    transition: var(--transition);
 }
 #logo-text{
-    width: 100%;
-    height: 2.4rem;
+    width: calc(1.5 * var(--icon-size));
+    height: var(--icon-size);
 }
-#logo-text path:nth-child(1),path:nth-child(4){
+#logo-text path:nth-child(1),#logo-text path:nth-child(4){
     stroke: var(--logo-color-14);
+    fill: var(--logo-color-14);
 }
-#logo-text path:nth-child(2),path:nth-child(3){
+#logo-text path:nth-child(2),#logo-text path:nth-child(3){
     stroke: var(--logo-color-23);
+    fill: var(--logo-color-23);
 } 
 
 /* ---------------- social Media ---------------- */
 
 .social-media{
     z-index: 100;
-    left: 0.5rem;
-    bottom: 0.5rem;
-    /* gap: 0rem; */
+    left: 1vw;
+    bottom: 1vw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
 }
 .sicon,.openmedia,.closemedia,.nicon{
-    width: 1.8rem;
-    height: 1.8rem;
-    line-height: 1.8rem;
-    border-radius: 4rem;
-    background: none;
-    text-align: center;
+    width: 2em;
+    height: 2em;
+    border-radius: 1em;
     overflow: hidden;
-    transition: all 0.2s ease-out;
-}
-.sicon:hover,.nicon:hover,.active{
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: var(--transition);
 }
-.sicon span,.nicon span{
-    font-family: var(--ff-orbitron);
-}
-.sicon:hover span,.nicon:hover span,.active span{
-    /* font-size: 0.6rem; */
-    font-size: var(--fz-xs);
-    letter-spacing: 0.1rem;
-    font-family: var(--ff-orbitron);
-}
-.sicon:hover i,.nicon:hover i{
-    color: var(--lightest-slate);
-    font-size: 0.65rem;
+.sicon a,.nicon a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+    padding: 0 0.5em;
+    text-decoration: none;
+    transition: var(--transition);
 }
 .sicon i,.nicon i{
-    color: var(--sicon);
-    font-size: 0.8rem;
+    color: var(--light-slate);
+    font-size: 1em;
+    transition: var(--transition);
+}
+.sicon span,.nicon span{
+    color: var(--white);
+    font-family: var(--ff-orbitron);
+    font-size: 0.6em;
+    letter-spacing: 1px;
+    display: none;
+    transition: var(--transition);
 }
 .sicon:hover,.nicon:hover,.active{
-    margin: 0.5rem 0rem 0.5rem 0rem;
-    width: 5.5rem;
-    height: 1rem;
+    margin: 0.5em 0em 0.5em 0em;
+    width: 100%;
+    height: 1em;
     cursor: pointer;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
+    justify-content: flex-start;
 }
-.social-media a,.navigation a{
-    width: 5.5rem;
-    text-decoration: none;
+.sicon:hover i,.nicon:hover i,.active i{
     color: var(--white);
+    font-size: 0.7em;
+}
+.sicon:hover span,.nicon:hover span,.active span{
+    display: block;
 }
 
 .facebook:hover{
@@ -297,8 +314,8 @@ textarea::-webkit-scrollbar-thumb{
 
 .navigation{
     z-index: 100;
-    right: 0.5rem;
-    top: 0.5rem;
+    right: 1vw;
+    top: 1vw;
     display: flex;
     align-items: flex-end;
     flex-direction: column;
@@ -306,19 +323,12 @@ textarea::-webkit-scrollbar-thumb{
 .home:hover,.about:hover,.worked:hover,.projects:hover,.contact:hover{
     background: var(--nicontemp);
 }
-.active i{
-    color: var(--white);
-    font-size: 0.65rem;
-}
 .active span{
-    transition: 0.2s ease-out all;
-}
-.active:hover span{
-    font-size: 0.6rem;
+    transition: var(--transition);
 }
 .active{
     background-color: var(--active-nicon);
-    transition: all 0.2s ease-out;
+    transition: var(--transition);
 }
 
 /* .close,.open{
@@ -353,6 +363,12 @@ section{
     /* scroll-snap */
     /* scroll-snap-align: start; */
 }
+h1, h2, h3, h4, h5, h6 {
+    margin: 0px 0px 10px;
+    font-weight: 600;
+    color: var(--lightest-slate);
+    line-height: 1;
+}
 
 
 /* ---------- Scroll animation ---------- */
@@ -371,47 +387,55 @@ section{
     filter: blur(0);
     transform: translateX(0);
 } */
-
+#home{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
 
 .home-container,.about-container,.experience-container,.project-container,.contact-container{
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 90%;
+    padding: 1em;
 }
 
 /* ---------------- Home Section ---------------- */
 
 .header-info{
-    width: 60%;
-    padding: 1rem;
+    width: 70%;
+    padding: 1em;
     z-index: 100;
     text-align: justify;
 }
 .greeting h1{
     font-family: var(--ff-roboto);
-    letter-spacing: 0.1rem;
+    /* letter-spacing: 0.1em; */
     color: var(--logo-color-14);
-    font-size: 0.6rem;
-    font-weight: 500;
-    margin: 0 0 0.5rem 0rem;
+    font-size: clamp(var(--fz-sm),5vw,var(--fz-md));
+    font-weight: 400;
+    margin: 0px 0px 30px 4px;
 }
 .full-name h2{
     font-family: var(--ff-orbitron);
     letter-spacing: 0.1rem;
-    font-size: 2rem;
+    font-size: clamp(var(--fz-heading), 4vw, 50px);
     font-weight: 200;
-    -webkit-text-stroke-width: 0.05rem;
+    -webkit-text-stroke-width: 0.02em;
     -webkit-text-stroke-color: var(--lightest-slate);
     -webkit-text-fill-color: transparent;
 }
 .tag-line{
     /* width: 90%; */
+    margin: 0.7em 0em;
 }
 .tag-line h3,.tag-line h4{
+    text-align: left;
     letter-spacing: 0.1rem;
     font-family: var(--ff-eczar);
     color: var(--light-slate);
-    font-size: 2rem;
-    font-weight: 400;
+    line-height: 1.3;
+    font-size: clamp(var(--fz-heading), 3vw, 40px);
+    font-weight: 600;
 }
 /* .tag-line h4{
     margin-top: -20px;
@@ -421,74 +445,71 @@ section{
     letter-spacing: 0.33rem;
 } */
 .description{
+    font-family: var(--font-sans);
     width: 90%;
-    font-family: var(--ff-quattrocento);
+    /* font-family: var(--ff-quattrocento); */
 }
 .description p,.about-text p{
     max-width: 100%;
-    letter-spacing: 0.05rem;
-    line-height: 1rem;
-    font-size: 0.7rem;
-    font-weight: 400;
+    font-family: var(--font-sans);
+    line-height: 1;
+    font-size: var(--fz-lg);
+    line-height: 1.3;
     color: var(--slate);
 }
 .description p span,.about-text p span{
     text-decoration: none;
     letter-spacing: 1px;
-    font-size: 0.7rem;
+    font-size: var(--fz-lg);
     color: var(--green);
 }
 
 .home-image{
-    width: 20%;
+    width: 30%;
+    height: 80%;
 }
 .home-image img{
-    width: 200%;
+    width: 150%;
 }
 
 /* ---------------- About Section ---------------- */
 
 .about-text{
-    width: 55%;
-    height: 80%;
-    padding: 1rem;
+    width: 70%;
+    height: 90%;
+    padding: 1em;
     z-index: 100;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 2rem;
+    gap: 1em;
 }
 .about-image{
-    width: 25%;
+    width: 30%;
 }
 .about-image img{
     width: 100%;
 }
-.N{
-    color: var(--green);
-    font-family: var(--ff-orbitron);
-    font-size: 0.8rem;
-}
 my-span{
     font-family: var(--ff-orbitron);
-    letter-spacing: 0.05rem;
-    font-size: 0.5rem;
+    letter-spacing: 0.02em;
+    font-size: var(--fz-sm);
     color: var(--green);
 }
 .only-text p{
     text-align: justify;
     font-family: var(--ff-nunito);
-    font-size: 0.7rem;
+    font-size: var(--fz-lg);
 }
 
 .skill{
-    left: 0rem;
+    left: 0em;
 }
 .experience{
     left: 50%;
     transform: translateX(-50%);
 }
 .education{
-    right: 0rem;
+    right: 0em;
 }
 
 .about-details{
@@ -496,42 +517,43 @@ my-span{
 }
 .about-details span{
     z-index: 100;
-    width: 6rem;
-    height: 1rem;
-    border-radius: 1rem;
+    width: 5em;
+    height: var(--fz-xl);
+    border-radius: 1em;
     border: 2px solid var(--green);
     align-items: center;
     font-family: var(--ff-merriweather);
-    line-height: 1rem;
+    line-height: 1;
     letter-spacing: 2px;
     color: var(--green);
     overflow: hidden;
     /* transition: all 1s ease-in-out; */
-    transition: all 1s cubic-bezier(0.645,0.045,0.355,1);
+    transition: all 0.5s var(--easing);
 }
 span h4{
-    font-size: 0.6rem;
+    font-size: var(--fz-xs);
     font-weight: 400;
+    padding: 0.1em 0em;
     border-bottom: 2px solid var(--green);
-    transition: all 1s ease-in-out;
+    transition: all 0.5s var(--easing);
 }
 
 @media screen and (min-width: 768px) {
     
 
 .about-details span:hover h4{
-    padding: 0.3rem 0rem;
-    font-size: 1rem;
+    padding: 0.3em 0em;
+    font-size: var(--fz-xl);
 }
 .about-details span:hover{
     z-index: 101;
     width: 100%;
-    height: 7rem;
+    height: 7em;
     background: var(--Eerie-Black);
     color: var(--lightest-slate);
 }
 .about-details:hover span:not(:hover){
-    width: 0rem;
+    width: 0em;
     border: none;
 }
 }
@@ -541,7 +563,7 @@ span h4{
 .education,.skill,.experience{
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.5em;
 }
 .edu-details,.skill-details,.exp-details{
     width: 100%;
@@ -551,22 +573,26 @@ span h4{
     font-family: var(--ff-nunito);
 }
 .box:not(:last-child){
-    margin-right: 1rem;
+    margin-right: 1em;
+}
+.box{
+    text-align: center;
 }
 .edu-details h1,.skill-details h1,.exp-details h1{
-    font-size: 0.5rem;
+    font-size: var(--fz-sm);
 }
 .edu-details h2,.skill-details h2,.exp-details h2{
     font-weight: 400;
-    font-size: 0.5rem;
+    font-size: var(--fz-sm);
 }
 .edu-details h3,.skill-details h3,.exp-details h3{
-    font-size: 0.5rem;
+    font-size: var(--fz-sm);
     font-weight: 400;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.1em;
 }
 .edu-details my-span,.skill-details my-span,.exp-details my-span{
-    font-size: 0.45rem;
+    font-size: var(--fz-xxs);
+    font-weight: 400;
 }
 
 /* ---------- Experience Section ---------- */
@@ -580,9 +606,10 @@ span h4{
     justify-content: flex-start;
     width: 80%;
     height: 80%;
-    gap: 2rem;
+    gap: 1em;
 }
 .experience-container h1{
+    margin: 0.5em 0em;
     font-family: var(--ff-eczar);
     font-size: 2rem;
     letter-spacing: 0.2rem;
@@ -595,25 +622,26 @@ span h4{
     height: 0.1rem;
     background: var(--lightest-navy);
     position: absolute;
-    bottom: 0.5rem;
+    bottom: -5px;
 }
 .experience-details{
-    width: 70%;
+    width: 90%;
+    padding: 2em 4em;
 }
 .company-names{
     width: auto;
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.2em;
 }
 .company-details{
     width: 70%;
     height: 100%;
 }
 .company{
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    font-size: 0.7rem;
+    padding: 0.5em 1em 0.5em 1em;
+    font-size: var(--fz-md);
     font-weight: 200;
     font-family: var(--ff-nunito);
     color: var(--light-slate);
@@ -621,10 +649,10 @@ span h4{
     border-top: 0.1rem solid var(--lightest-navy);
     border-radius: 0rem 4rem 0rem 4rem;
     /* clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%); */
-    transition: 0.5s all ease-out;
+    transition: var(--transition);
 }
 .company span{
-    font-size: 0.5rem;
+    font-size: var(--fz-md);
 }
 .company:hover,.active-company{
     background-color: var(--Eerie-Black);
@@ -632,17 +660,17 @@ span h4{
     cursor: pointer;
 }
 .active-company{
-    border-left: 0.1rem solid var(--green);
-    border-top: 0.1rem solid var(--green);
+    border-left: 0.1em solid var(--green);
+    border-top: 0.1em solid var(--green);
 }
 .work-details{
-    padding-left: 1rem;
+    padding-left: 1em;
     display: none;
 }
 .work-details h2,.work-details h2 span,.work-details h3{
     color: var(--white);
     font-family: var(--ff-merriweather);
-    font-size: 0.8rem;
+    font-size: var(--fz-lg);
     font-weight: 400;
     letter-spacing: 1px;
 }
@@ -654,36 +682,36 @@ span h4{
 }
 
 .work-details h3,.work-details h3 span{
-    font-size: 0.6rem;
-    margin: 0.5rem 0rem;
+    font-size: var(--fz-md);
+    margin: 1em 0em;
 }
 
 .work-details h4{
-    margin: 0.5rem 0rem;
+    margin: 1em 0em;
     color: var(--light-slate);
     font-family: var(--ff-merriweather);
-    font-size: 0.5rem;
+    font-size: var(--fz-sm);
     font-weight: 400;
-    letter-spacing: 0.05rem;
+    letter-spacing: 0.01em;
 }
 .work-details ul{
     position: relative;
 }
 .work-details ul li{
     list-style: none;
-    padding-left: 1rem;
-    margin: 0.5rem 0rem;
-    font-size: 0.65rem;
+    padding-left: 2em;
+    margin: 1em 0em;
+    font-size: var(--fz-sm);
     font-family: var(--ff-nunito);
     color: var(--slate);
-    line-height: 1rem;
+    line-height: 1.3;
     text-align: justify;
 }
 
 .work-details ul li::before {
     content: "▹";
     position: absolute;
-    left: 0px;
+    left: 0.5em;
     color: var(--green);
 }
 
@@ -712,29 +740,30 @@ span h4{
     flex-direction: column;
 }
 .projects-heading{
-    font-size: 2rem;
+    font-size: var(--fz-heading);
     font-family: var(--ff-eczar);
     color: var(--light-slate);
+    margin: 1em 0em;
     display: none;
 }
 .grid-container{
     display: grid;
     grid-template-columns: auto auto auto;
-    gap: 0.5rem;
+    gap: 0.5em;
 }
 .grid-item{
     width: 25vw;
     height: 40vh;
     background-color: var(--Eerie-Black);
     flex-direction: column;
-    border-radius: 0.5rem;
-    padding: 1rem;
+    border-radius: 1em;
+    padding: 1em;
     border: 4px solid var(--Eerie-Black);
-    transition: all 0.4s ease-out;
+    transition: var(--transition);
 }
 .grid-item img{
-    width: 0rem;
-    transition: all 0.4s ease-out;
+    width: 0em;
+    transition: var(--transition);
 }
 .grid-item:hover img{
     width: 100%;
@@ -743,7 +772,7 @@ span h4{
     position: relative;
 }
 .active-project img{
-    width: 0rem;
+    width: 0em;
     opacity: 0.1;
     position: absolute;
 }
@@ -753,15 +782,15 @@ span h4{
 .grid-item span{
     font-family: var(--ff-eczar);
     color: var(--light-slate);
-    font-size: 0.8rem;
-    transition: all 0.5s ease-out;
+    font-size: var(--fz-xl);
+    transition: var(--transition);
 }
 .grid-item:hover span{
     color: var(--green);
-    font-size: 1.5rem;
+    font-size: var(--fz-heading);
 }
 .grid-item:hover{
-    transform: translateY(-0.2rem);
+    transform: translateY(-0.25em);
     cursor: pointer;
     background: var(--bgcolour);
 }
@@ -776,27 +805,27 @@ span h4{
 }
 .project-title h1{
     width: 100%;
-    font-size: 0.8rem;
+    font-size: var(--fz-xxl);
     color: var(--lightest-slate);
     font-weight: 600;
-    line-height: 1.3rem;
-    letter-spacing: 0.85px;
-    margin-bottom: 0.5rem;
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5em;
 }
 .active-project:hover .project-title h1{
     color: var(--green);
 }
 .project-desc p{
     font-family: var(--ff-merriweather);
-    line-height: 0.8rem;
+    line-height: 1.3;
     letter-spacing: 1px;
-    font-size: 0.5rem;
+    font-size: var(--fz-md);
     color: var(--light-slate);
     text-align: justify;
 }
 .project-tech-list{
     position: absolute;
-    bottom: 0rem;
+    bottom: 0em;
     width: 100%;
 }
 .project-tech-list ul{
@@ -805,7 +834,7 @@ span h4{
 }
 .project-tech-list ul li{
     color: var(--slate);
-    font-size: 0.5rem;
+    font-size: var(--fz-sm);
     list-style: none;
 }
 .active-project:hover .project-tech-list ul li{
@@ -823,7 +852,7 @@ span h4{
     height: 95vh;
 }
 .contact-container{
-    gap: 1rem;
+    gap: 1em;
     width: 80%;
     font-family: var(--ff-eczar);
 }
@@ -836,57 +865,57 @@ span h4{
 .primary-contacts h1{
     color: var(--lightest-slate);
     font-weight: 600;
-    font-size: 2rem;
-    letter-spacing: 0.1rem;  
+    font-size: var(--fz-big-heading);
+    letter-spacing: 0.1em;  
 }
 .primary-contacts p:nth-child(2){
-    margin: 0rem 2rem 0.75rem 2rem;
+    margin: 0em 2em 0.75em 2em;
     color: var(--light-slate);
-    font-size: 0.7rem;
+    font-size: var(--fz-lg);
     width: 90%;
     font-family: var(--ff-eczar);
-    line-height: 0.8rem;
+    line-height: 1.3;
     text-align: justify;
 }
 .primary-contacts p i,.address p i{
-    margin-right: 0.5rem;
+    margin-right: 1em;
     color: var(--green);
-    font-size: 0.6rem;
+    font-size: var(--fz-lg);
 }
 .primary-contacts p span,.address p span{
     color: var(--light-slate);
     font-family: var(--ff-eczar);
-    font-size: 0.7rem;
-    transition: all 0.5s ease-out;
+    font-size: var(--fz-lg);
+    transition: var(--transition);
 }
 .primary-contacts p:hover span,.address p:hover span{
     color: var(--green);
 }
 .address p span{
-   letter-spacing: 0.1rem;
+   letter-spacing: 0.1em;
 }
 .write-me-form{
     flex-basis: 55%;
     flex-direction: column;
-    padding: 1rem;
+    padding: 1em;
     border: 4px solid var(--Eerie-Black);
-    border-radius: 1rem;
-    transition: all 0.5s ease-in-out;
+    border-radius: 1em;
+    transition: var(--transition);
 }
 .write-me-form h2{
     color: var(--light-slate);
     font-weight: 600;
-    font-size: 1.5rem;
-    letter-spacing: 6px;
-    line-height: 1.5rem;
-    transition: all 0.5s ease-in-out;
+    font-size: var(--fz-big-heading);
+    letter-spacing: 0.1em;
+    line-height: 1.3;
+    transition: var(--transition);
 }
 .write-me-form p{
     color: var(--light-slate);
     font-weight: 400;
-    font-size: 0.7rem;
+    font-size: var(--fz-lg);
     letter-spacing: 1px;
-    transition: all 0.5s ease-in-out;
+    transition: var(--transition);
 }
 
 .write-me-form:hover{
@@ -914,40 +943,40 @@ form input, form textarea{
     border: none;
     outline: none;
     background: var(--Eerie-Black);
-    padding: 0.5rem;
-    margin: 0.5rem 0;
+    padding: 0.5em;
+    margin: 0.5em 0;
     color: var(--slate);
-    font-size: 0.7rem;
-    border-radius: 0.5rem;
+    font-size: var(--fz-md);
+    border-radius: 0.5em;
     resize: none;
     border: 4px solid var(--Eerie-Black);
-    transition: all 0.5s ease-in-out;
+    transition: var(--transition);
 }
 
 form .submit-btn{
-    width: 4rem;
-    height: 1.5rem;
-    border-radius: 0.5rem;
+    width: 6em;
+    height: 2em;
+    border-radius: 0.5em;
     font-family: var(--ff-merriweather);
-    font-size: 0.8rem;
+    font-size: var(--fz-xl);
     font-weight: 400;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.1em;
     background-color: var(--Eerie-Black);
     color: var(--light-slate);
     border: 4px solid var(--Eerie-Black);
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
+    transition: var(--transition);
 }
 .submit-btn:hover{
     color: var(--Eerie-Black);
     background-color: var(--green);
 }
 #message{
-    margin-top: 1rem;
+    margin-top: 1em;
     color: var(--green);
     font-family: var(--ff-quattrocento);
-    font-size: 0.7rem;
-    letter-spacing: 0.1rem;
+    font-size: var(--fz-lg);
+    letter-spacing: 0.1em;
     font-weight: 400;
     display: block;
 }
@@ -956,18 +985,18 @@ form .submit-btn{
     height: 5vh;
 }
 .copyright{
-    gap: 0.3rem;
+    gap: 0.3em;
 }
 .copyright p{
     color: var(--lightest-slate);
     font-family: var(--ff-eczar);
-    font-size: 0.6rem;
+    font-size: var(--fz-sm);
     font-weight: 400;
-    letter-spacing: 0.1rem;
-    transition: all 0.5s ease-out;
+    letter-spacing: 0.1em;
+    transition: var(--transition);
 }
 .copyright hr{
-    width: 4rem;
+    width: 4em;
     border-style: dashed;
     border-color: var(--lightest-slate);
 }
