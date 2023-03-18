@@ -21,6 +21,23 @@
     --green-tint: rgba(100,255,218,0.1);
     --pink: #f57dff;
     --blue: #57cbff;
+    --fz-xxs: 12px;
+    --fz-xs: 13px;
+    --fz-sm: 14px;
+    --fz-md: 16px;
+    --fz-lg: 18px;
+    --fz-xl: 20px;
+    --fz-xxl: 22px;
+    --fz-heading: 32px;
+    --fz-big-heading: 44px;
+    --icon-size: 50px;
+    --border-radius: 4px;
+    --nav-height: 100px;
+    --nav-scroll-height: 70px;
+    --tab-height: 42px;
+    --tab-width: 120px;
+
+    --font-sans: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
 
 
     --mygreen: #CCF381;
@@ -56,7 +73,7 @@
 --nicontemp: #CF1B24;
     --logo-color-14: var(--green);
     --logo-color-23: var(--green);
-    --sicon: var(--light-slate);
+    --sicon: var(--lightest-slate);
     --nicon: var(--light-slate);
     --active-nicon: var(--jungle-green);
     --scroll-barwidth: 17px;
@@ -75,15 +92,15 @@
     --border-blue: 2px solid blue;
 
     --mobile-section-margin: 0vh;
+    
+    --easing: cubic-bezier(0.645,0.045,0.355,1);
+    --transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
 }
 @media screen and (max-width: 450px),(max-width:600px){
     /* @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) */
     /* ******************** common ******************** */
-    *{
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        font-size: 16px;
+    body{
+        font-size: var(--fz-lg);
     }
     .container{
         width: 100%;
@@ -92,77 +109,72 @@
         /* gap: 5rem; */
     }
     #logo{
-        left: 1rem;
+        left: 2vw;
     }
     #navbar {
-        left: 3rem;
+        left: calc(2.5vw + var(--icon-size));
     }
     /* ******************** Social-Media/Navigation ******************** */
     .social-media{
         z-index: 100;
-        left: 0.25rem;
-        bottom: 0.5rem;
+        left: 1vw;
+        bottom: 1vh;
     }
     .navigation{
         z-index: 100;
-        right: 0.25rem;
-        top: 0.5rem;
+        right: 1vw;
+        top: 1vh;
     }
     .sicon,.nicon,.sicon:hover,.nicon:hover,.active{
-        width: 2.5rem;
-        height: 2.5rem;
-        line-height: 3rem;
-    }
-    .sicon:hover,.nicon:hover,.active{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .sicon{
-        background-color: var(--light-slate);
-        margin-top: 0.5rem;
-    }
-    .nicon{
-        margin-bottom: 0.5rem;
+        width: 2em;
+        height: 2em;
+        margin: 0.25em 0em 0.25em 0em;
+        color: var(--lightest-slate);
     }
     .sicon i,.nicon i{
         color: var(--sicon);
-        font-size: 1.4rem;
+        font-size: 1.2em;
     }
-    .sicon span,.nicon span{
+    .sicon span,.nicon span,.sicon:hover span,.nicon:hover span{
         display: none;
     }
-    .active{
-        margin-top: 0rem;
+    .sicon:hover,.nicon:hover,.active{
+        justify-content: center;
     }
     .sicon:hover i,.nicon:hover i{
-        font-size: 1.4rem;
+        font-size: 1.2em;
     }
     .active i{
         color: var(--light-slate);
-        font-size: 1.4rem;
+        font-size: 1.2em;
     }
     .active{
         background-color: var(--active-nicon);
-        transition: all 0.2s ease-out;
+        transition: var(--transition);
     }
     .home:hover,.about:hover,.worked:hover,.projects:hover,.contact:hover{
         background-color: var(--nicontemp);
     }
-    .facebook i{
-        color: var(--facebook) ;
+    .facebook{
+        background-color: var(--facebook);
     }
-    .linkedin i{
-        color: var(--linkedin);
+    .linkedin{
+        background-color: var(--linkedin);
+    }
+    .github{
+        background-color: var(--github);
+    }
+    .instagram{
+        background-color: var(--instagram);
+    }
+    .twitter{
+        background-color: var(--twitter);
     }
     .github i{
-        color: var(--github);
+        font-size: 1.8em;
     }
     .instagram i{
-        color: var(--instagram);
-    }
-    .twitter i{
-        color: var(--twitter);
+        font-size: 1.5em;
     }
 
 
@@ -203,8 +215,8 @@
         /* gap: 3vh; */
     }
     .home-image{
-        width: calc(3rem*4);
-        height: calc(3.5rem*4);
+        width: calc(2.5em*4);
+        height: calc(3em*4);
         transform: translate(20vw, 0vh);
     }
     .home-image img{
@@ -213,18 +225,18 @@
     }
     .greeting h1{
         text-align: center;
-        font-size: 1rem;
+        font-size: var(--fz-md);
     }
     .full-name h2{
         text-align: center;
-        letter-spacing: 0.2rem;
+        letter-spacing: 0.1em;
         /* font-size: 10vw; */
-        font-size: clamp(2rem, 10vw, 5rem);
-        line-height: 3rem;
+        font-size: clamp(2em, 10vw, 5em);
+        line-height: 1.3;
     }
     .tag-line{
-        margin: 2rem 0rem 2rem 0rem;
-        transform: translateX(-50%);
+        margin: 0.7em 0em 0.7em 0em;
+        transform: translateX(-60%);
         /* text-align: center; */
         width: 30vw;
         height: 35vh;
@@ -239,11 +251,6 @@
     }
     .description p{
         text-align: center;
-        line-height: 1.2rem;
-        font-size: 1rem;
-    }
-    .description p span{
-        font-size: 1rem;
     }
     /* ******************** About Section ******************** */
 
@@ -253,36 +260,35 @@
     }
     .about-container{
         flex-direction: column;
-        gap: 1rem;
+        gap: 1em;
     }
     .about-image{
-        width: 50%;
+        width: 70%;
     }
     .about-image img{
         width: 100%;
     }
     .about-text{
-        width: 90%;
+        width: 100%;
         height: 100%;
         padding: 0;
-        gap: 1rem;
+        gap: 1em;
     }
     .only-text{
         width: 100%;
     }
     .only-text p{
-        font-size: 0.75rem;
-        line-height: 0.9rem;
+        font-size: 0.8em;
+        line-height: 1.3;
     }
     .only-text my-span{
-        font-family: var(--ff-merriweather);
-        font-size: 0.65rem;
+        font-size: 0.75em;
     }
     .about-details{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 1rem;
+        gap: 1em;
     }
     .about-details span{
         position: relative;
@@ -297,19 +303,19 @@
         transform: translateX(-50%);
     }
     span h4{
-        padding: 0.3rem 0rem;
-        font-size: 1rem;
+        padding: 0.3em 0em;
+        font-size: 1em;
     }
     .edu-details,.skill-details,.exp-details{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        gap: 0.5rem;
+        gap: 0.5em;
     }
     .box{
         width: 100%;
-        margin: 0rem;
+        margin: 0em;
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -326,23 +332,23 @@
         width: 25%;
     }
     .skill h1,.experience h1,.education h1{
-        font-size: 0.7rem;
+        font-size: 0.6em;
     }
     .skill h2,.experience h2,.education h2{
-        font-size: 0.7rem;
+        font-size: 0.6em;
     }
     .skill h3,.experience h3,.education h3{
-        font-size: 0.7rem;
+        font-size: 0.6em;
     }
     .edu-details my-span,.skill-details my-span,.exp-details my-span{
-        font-size: 0.6rem;
+        font-size: 1em;
         font-weight: 400;
     }
     .edu-details h2,.exp-details h2,.edu-details h3,.exp-details h3{
         width: 37%;
     }
     .box:not(:last-child){
-        margin-right: 0.2rem;
+        margin: 0.2em 0em;
     }
     
     section:not(:last-child){
@@ -356,21 +362,23 @@
         height: auto;
     }
     .experience-container{
-        gap: 0rem;
+        gap: 0em;
         text-align: center;
     }
     .experience-container h1{
         width: 100%;
-        font-size: 1.7rem;
-        letter-spacing: 0rem;
+        font-size: clamp(26px, 7vw, 80px);
+        letter-spacing: 0em;
+        margin: 0em 0em;
     }
     .experience-container h1::before{
         width: 0;
     }
     .experience-details{
-        width: 95%;
+        width: 100%;
         flex-direction: column;
-        gap: 1rem;
+        padding: 1em 0em;
+        gap: 1em;
     }
     .company-names{
         display: flex;
@@ -379,44 +387,50 @@
         height: auto;
         text-align: center;
         justify-content: center;
-        gap: 0.5rem;
+        gap: 0em;
     }
     .company-details{
         width: 100%;
     }
     .company{
         width: fit-content;
-        padding: 0rem 0.5rem 0rem 0.5rem;
+        padding: 0em 0.25em 0em 0.25em;
         border-left: none;
         border-top: none;
-        border-bottom: 0.1rem solid var(--lightest-navy);
-        border-radius: 0rem 0rem 1.5rem 1.5rem;
+        border-bottom: 0.1em solid var(--lightest-navy);
+        border-radius: 0em 0em 1.5em 1.5em;
         /* clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%); */
     }
     .company span{
-        font-size: 0.7rem;
+        font-size: var(--fz-xs);
     }
     .company:hover,.active-company{
         background-color: var(--bgcolour);
     }
     .active-company{
-        border-bottom: 0.1rem solid var(--green);
+        border-bottom: 0.1em solid var(--green);
     }
     .work-details{
-        padding-left: 0.5rem;
+        padding-left: 0em;
     }
     .work-details h2,.work-details h2 span,.work-details h3{
-        font-size: 1rem;
+        font-size: 1em;
     }
     .work-details h3,.work-details h3 span{
-        font-size: 0.8rem;
+        font-size: 0.8em;
+        margin: 1em 0em 0.5em 0em;
     }
     .work-details h4{
-        font-size: 0.6rem;
+        font-size: 0.6em;
+        margin: 0em 0em 2em 0em;
     }
     .work-details ul li{
-        font-size: 0.75rem;
-        line-height: 0.9rem;
+        padding-left: 1em;
+        font-size: 0.75em;
+        line-height: 1.3;
+    }
+    .work-details ul li::before {
+        left: 0.25em;
     }
 
     .experience-image{
@@ -441,36 +455,35 @@
     .projects-heading{
         text-align: center;
         width: 100%;
+        margin: 0em 0em 0.75em 0em;
         display: block;
     }
     .grid-container{
         width: 90%;
-        gap: 1rem;
         grid-template-columns: auto;
     }
     .grid-item{
         /* width: 100%; */
         width: calc(3*(100vw/4));
         height: calc(2.5*(100vw/4));
-        padding: 8vw;
+        padding: 6vw;
     }
     .grid-item span{
-        font-size: 1rem;
+        font-size: 1em;
     }
     .grid-item:hover span{
-        font-size: 2rem;
+        font-size: 2em;
     }
     .project-title h1{
         text-align: center;
-        font-size: 1rem;
+        font-size: 1em;
     }
     .project-desc p{
-        line-height: 1rem;
-        font-size: 0.75rem;
+        font-size: 0.75em;
         text-align: center;
     }
     .project-tech-list ul li{
-        font-size: 0.8rem;
+        font-size: 0.8em;
     }
     /* ******************** Contact Section ******************** */
 
@@ -481,10 +494,23 @@
     .contact-container{
         flex-direction: column;
     }
+    .primary-contacts h1{
+        font-size: clamp(40px, 8vw, 80px);
+    }
     .write-me-form{
-        width: 90%;
+        width: 100%;
         height: 100%;
-        padding: 0.5rem;
+        padding: 0.5em;
+    }
+    .write-me-form h2{
+        font-size: clamp(30px, 8vw, 80px);
+    }
+    .write-me-form p{
+        font-size: clamp(var(--fz-sm), 6vw ,var(--fz-md));
+    }
+    #message{
+        font-size: clamp(var(--fz-sm), 8vw ,var(--fz-md));
+        text-align: center;
     }
     /* ******************** Copyright Section ******************** */
 
@@ -495,14 +521,14 @@
     }
     .copyright{
         width: 80%;
-        padding: 1rem;
-        gap: 0.5rem;
+        padding: 1em;
+        gap: 0.5em;
     }
     .copyright p{
         width: 40%;
         text-align: center;
-        font-size: 0.5rem;
-        letter-spacing: 0.1rem;
+        font-size: 0.5em;
+        letter-spacing: 0.1em;
     }
 
 }

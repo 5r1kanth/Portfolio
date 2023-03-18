@@ -9,7 +9,7 @@ function navHighlighter() {
     const sectionHeight = current.offsetHeight;
     const sectionTop = current.offsetTop;
     const sectionId = current.getAttribute("id");
-    if (scrollY >= (sectionTop - sectionHeight/2) && scrollY < sectionTop + (sectionHeight/2)){
+    if (scrollY >= (sectionTop - sectionHeight/2.5) && scrollY < sectionTop + (sectionHeight/2.5)){
       document.querySelector(".navigation ."+sectionId).classList.add("active");
     } else {
       document.querySelector(".navigation ."+sectionId).classList.remove("active");
