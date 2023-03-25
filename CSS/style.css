@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Eczar&family=Merriweather+Sans&family=Nunito&family=Orbitron&family=Quattrocento+Sans&family=Roboto+Mono&family=Sacramento&display=swap');
 /* @import url("header.css"); */
 @import url("mobile.css");
+@import url("tablet.css");
 *{
     padding: 0;
     margin: 0;
@@ -101,6 +102,8 @@
     --border-green: 2px solid green;
     --border-red: 2px solid red;
     --border-blue: 2px solid blue;
+   
+    --mobile-section-margin: 0vh;
 
     --easing: cubic-bezier(0.645,0.045,0.355,1);
     --transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
@@ -181,7 +184,7 @@ textarea::-webkit-scrollbar-thumb{
     position: fixed;
     z-index: 200;
     left: 2vw;
-    top: 1vw;
+    top: 2vw;
     width: calc(1.8*var(--icon-size));
     height: calc(1.2*var(--icon-size));
     transition: var(--transition);
@@ -538,7 +541,7 @@ span h4{
     transition: all 0.5s var(--easing);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1000px) {
     
 
 .about-details span:hover h4{
@@ -911,6 +914,7 @@ span h4{
     transition: var(--transition);
 }
 .write-me-form p{
+    text-align: center;
     color: var(--light-slate);
     font-weight: 400;
     font-size: var(--fz-lg);

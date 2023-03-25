@@ -1,24 +1,19 @@
 /* @import url("style.css"); */
 
-@media screen and (max-width:600px){
-    /* @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) */
-    /* ******************** common ******************** */
+@media (min-width: 600px) and (max-width: 1000px) {
     body{
-        font-size: var(--fz-lg);
-    }
-    .container{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        /* gap: 5rem; */
+        font-size: var(--fz-xxl);
     }
     #logo{
-        left: 2vw;
-    }
-    #navbar {
-        left: calc(2.5vw + var(--icon-size));
+    top: 2vw;
+    width: calc(2*var(--icon-size));
+        height: calc(1.5*var(--icon-size));
     }
     /* ******************** Social-Media/Navigation ******************** */
+
+    .social-media,.navigation{
+        font-size: var(--fz-md);
+    }
     .social-media{
         z-index: 100;
         left: 1vw;
@@ -80,8 +75,7 @@
     .instagram i{
         font-size: 1.5em;
     }
-
-
+    
     /* ******************** Sections Common ******************** */
 
     section{
@@ -101,7 +95,7 @@
         align-items: center;
     }
     .home-container,.about-container,.experience-container,.project-container,.contact-container{
-        width: 80%;
+        width: 90%;
         margin: 5vh 0 5vh 0;
     }
     .about-container,.experience-container,.project-container,.contact-container{
@@ -116,11 +110,12 @@
         align-items: center;
         justify-content: flex-start;
         width: 100%;
+        /* gap: 3vh; */
     }
     .home-image{
         width: calc(2.5em*4);
         height: calc(3em*4);
-        transform: translate(20vw, 0vh);
+        transform: translate(15vw, 6vh);
     }
     .home-image img{
         width: 100%;
@@ -133,24 +128,21 @@
     .full-name h2{
         text-align: center;
         letter-spacing: 0.1em;
-        /* font-size: 10vw; */
-        font-size: clamp(2em, 10vw, 5em);
-        line-height: 1.3;
+        font-size: clamp(2em, 8vw, 4em);
+        line-height: 1;
     }
     .tag-line{
         margin: 0.7em 0em 0.7em 0em;
-        transform: translateX(-60%);
-        /* text-align: center; */
-        width: 30vw;
+        transform: translateX(-70%);
+        width: 20vw;
         height: 35vh;
     }
     .tag-line h3,.tag-line h4{
-        font-size: clamp(2rem, 8vw, 5rem);
-        /* font-size: 2.2rem; */
+        font-size: clamp(2rem, 6vw, 5rem);
         line-height: calc(35vh/4);
     }
     .description{
-        width: 100%;
+        width: 80%;
     }
     .description p{
         text-align: center;
@@ -166,7 +158,7 @@
         gap: 1em;
     }
     .about-image{
-        width: 70%;
+        width: 40%;
     }
     .about-image img{
         width: 100%;
@@ -180,12 +172,9 @@
     .only-text{
         width: 100%;
     }
-    .only-text p{
-        font-size: 1em;
-        line-height: 1.3;
-    }
-    .only-text my-span{
+    .only-text p,.only-text my-span{
         font-size: 0.8em;
+        line-height: 1.3;
     }
     .about-details{
         display: flex;
@@ -235,13 +224,13 @@
         width: 25%;
     }
     .skill h1,.experience h1,.education h1{
-        font-size: 0.65em;
+        font-size: 0.6em;
     }
     .skill h2,.experience h2,.education h2{
-        font-size: 0.65em;
+        font-size: 0.6em;
     }
     .skill h3,.experience h3,.education h3{
-        font-size: 0.65em;
+        font-size: 0.6em;
     }
     .edu-details my-span,.skill-details my-span,.exp-details my-span{
         font-size: 1em;
@@ -287,7 +276,7 @@
         display: flex;
         flex-direction: row;
         width: 100%;
-        height: auto;
+        height: fit-content;
         text-align: center;
         justify-content: center;
         gap: 0em;
@@ -296,7 +285,7 @@
         width: 100%;
     }
     .company{
-        width: fit-content;
+        width: 30%;
         padding: 0em 0.25em 0em 0.25em;
         border-left: none;
         border-top: none;
@@ -338,11 +327,11 @@
 
     .experience-image{
         display: block;
-        width: 100%;
+        width: 50%;
         display: flex;
     }
     .experience-image img{
-        width: 80%;
+        width: 100%;
     }
     /* ******************** Projects Section ******************** */
 
@@ -356,6 +345,7 @@
         justify-content: flex-start;
     }
     .projects-heading{
+        font-size: clamp(2em, 7vw, 5em);
         text-align: center;
         width: 100%;
         margin: 0em 0em 0.75em 0em;
@@ -363,13 +353,13 @@
     }
     .grid-container{
         width: 90%;
-        grid-template-columns: auto;
+        grid-template-columns: auto auto;
     }
     .grid-item{
         /* width: 100%; */
-        width: calc(3*(100vw/4));
-        height: calc(2.5*(100vw/4));
-        padding: 6vw;
+        width: calc((3*(100vw/4))/2);
+        height: calc((2.5*(100vw/4))/1.8);
+        padding: 2vw;
     }
     .grid-item span{
         font-size: 1em;
@@ -379,14 +369,14 @@
     }
     .project-title h1{
         text-align: center;
-        font-size: 1em;
+        font-size: 0.8em;
     }
     .project-desc p{
-        font-size: 0.75em;
+        font-size: 0.65em;
         text-align: center;
     }
     .project-tech-list ul li{
-        font-size: 0.8em;
+        font-size: 0.7em;
     }
     /* ******************** Contact Section ******************** */
 
@@ -396,9 +386,21 @@
     }
     .contact-container{
         flex-direction: column;
+        gap: 2em;
     }
     .primary-contacts h1{
         font-size: clamp(40px, 8vw, 80px);
+    }
+    .primary-contacts p:nth-child(2){
+        width: 80%;
+        text-align: center;
+        font-size: var(--fz-md);
+    }
+    .primary-contacts p i,.address p i{
+        font-size: var(--fz-sm);
+    }
+    .primary-contacts p span,.address p span{
+        font-size: var(--fz-md);
     }
     .write-me-form{
         width: 100%;
@@ -435,78 +437,8 @@
     }
 
 }
-@media screen and (max-width:330px){
-    .social-media,.navigation{
-        font-size: var(--fz-xs);
-    }
-    .home-container,.about-container,.experience-container,.project-container,.contact-container{
-        width: 90%;
-    }
-    
-    .grid-item{
-        padding: 4vw;
-    }
-    .grid-item:hover span{
-        font-size: 1.5em;
-    }
-    .project-title h1{
-        font-size: 0.8em;
-    }
-    .project-desc p{
-        font-size: 0.7em;
-    }
-    .project-tech-list ul li{
-        font-size: 0.7em;
-    }
-    .primary-contacts p:nth-child(2){
-        font-size: var(--fz-sm);
-    }
-    .primary-contacts p i,.address p i{
-        font-size: var(--fz-sm);
-    }
-    .primary-contacts p span,.address p span{
-        font-size: var(--fz-sm);
-    }
-    .write-me-form h2{
-        font-size: clamp(20px, 10vw, 60px);
-    }
-    .write-me-form p{
-        font-size: var(--fz-sm);
-    }
-    #message{
-        font-size: clamp(var(--fz-xs), 8vw ,var(--fz-md));
-    }
-}
-
-@media screen and (max-height: 690px) {
+@media (max-width: 700px),(min-width: 600px) {
     .header-info{
-        border: var(--border-red);
-        height: 100%;
-    }
-    .description p,.description span{
-        font-size: var(--fz-md);
-    }
-}
-
-@media (min-width:450px) and (max-width:600px) {
-    /* *{
-        font-size: 18px;
-    } */
-    .home-image{
-        /* border: var(--border-green); */
-        /* width: 50vw;
-        height: calc(3.5rem*4);*/
-        transform: translate(20vw, 3vh); 
-    }
-    .tag-line{
-        /* text-align: center; */
-        /* border: var(--border-blue); */
-        /* width: 45vw;
-        height: 35vh; */
-    }
-    .tag-line h3,.tag-line h4{
-        /* font-size: clamp(2.5rem, 8vw, 5rem);; */
-        /* font-size: 3rem; */
-        /* line-height: calc(35vh/4); */
+        gap: 1em;
     }
 }
