@@ -480,7 +480,7 @@
 
 @media screen and (max-height: 690px) {
     .header-info{
-        border: var(--border-red);
+        /* border: var(--border-red); */
         height: 100%;
     }
     .description p,.description span{
