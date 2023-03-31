@@ -478,14 +478,22 @@
     }
 }
 
-@media screen and (max-height: 690px) {
+/* @media only screen and (max-height: 690px) {
     .header-info{
-        /* border: var(--border-red); */
         height: 100%;
     }
     .description p,.description span{
         font-size: var(--fz-md);
     }
+} */
+@media (max-width: 380px) and (max-height:690px) {
+    .header-info{
+        height: 100%;
+    }
+    .description p,.description p span{
+        font-size: var(--fz-md);
+    }
+    
 }
 
 @media (min-width:450px) and (max-width:600px) {
